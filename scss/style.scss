@@ -217,7 +217,7 @@ $mobile: 539px;
 #visual {
   width: 100%;
   height: calc(100vh - 90px);
-  background: url("/img/visual.jpg") no-repeat top/cover;
+  background: url("../img/visual.jpg") no-repeat top/cover;
   filter: grayscale(100%);
   position: relative;
   margin: 0 auto;
