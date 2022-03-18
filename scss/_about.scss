@@ -9,7 +9,8 @@
   .division {
     width: 100%;
     height: 800px;
-    background: url(../img/department.jpg) no-repeat center/contain;
+    background: url(../img/department1.jpg) no-repeat center/contain;
+    margin-bottom: 80px;
 
     .div_tree {
       position: absolute;
@@ -100,7 +101,7 @@
         height: 350px;
         background-color: #eee;
         margin-right: 20px;
-        margin-top: 120px;
+        margin-top: 180px;
 
         text-align: center;
         &:nth-of-type(2),
