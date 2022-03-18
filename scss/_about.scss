@@ -1,7 +1,7 @@
 .about {
   .sub_visual {
     &::after {
-      background: url(/img/about.jpg) no-repeat center/cover;
+      background: url(../img/about.jpg) no-repeat center/cover;
       background-attachment: fixed;
     }
   }
@@ -9,7 +9,7 @@
   .division {
     width: 100%;
     height: 800px;
-    background: url(/img/department.jpg) no-repeat center/contain;
+    background: url(../img/department.jpg) no-repeat center/contain;
 
     .div_tree {
       position: absolute;
