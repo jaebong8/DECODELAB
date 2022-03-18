@@ -702,10 +702,6 @@ fieldset {
   background-color: #eee;
   margin-right: 20px;
   margin-top: 120px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   text-align: center;
 }
 .about .members .wrap article:nth-of-type(2), .about .members .wrap article:nth-of-type(4) {
@@ -755,8 +751,6 @@ fieldset {
   background-color: #333;
   position: absolute;
   bottom: 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 .about .members .wrap article .fonts a {
   margin-right: 15px;
@@ -1254,7 +1248,7 @@ fieldset {
   background-color: #eee;
 }
 #process > .inner .wrap article .font i {
-  font-size: 35px;
+  font-size: 20px;
   line-height: 72px;
 }
 #process > .inner .wrap article p {

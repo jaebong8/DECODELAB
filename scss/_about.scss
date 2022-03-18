@@ -101,10 +101,7 @@
         background-color: #eee;
         margin-right: 20px;
         margin-top: 120px;
-        border-top-left-radius: 40px;
-        border-top-right-radius: 40px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+
         text-align: center;
         &:nth-of-type(2),
         &:nth-of-type(4) {
@@ -156,8 +153,7 @@
           background-color: #333;
           position: absolute;
           bottom: 0;
-          border-bottom-left-radius: 10px;
-          border-bottom-right-radius: 10px;
+
           a {
             margin-right: 15px;
             display: inline-block;
