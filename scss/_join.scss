@@ -1,0 +1,95 @@
+.join {
+  .sub_visual {
+    &::after {
+      background: url(/img/join.jpg) no-repeat center/cover;
+      background-attachment: fixed;
+    }
+  }
+
+  .inner {
+    h2 {
+      font: bold 18px/1 $headerFont;
+      color: #fff;
+      margin-bottom: 20px;
+      background-color: #000;
+      padding: 5px;
+      text-align: center;
+      &:nth-of-type(1) {
+        margin-bottom: 0px;
+      }
+    }
+    #terms {
+      width: 100%;
+      height: 100px;
+      resize: none;
+      font: 12px/1.3 "arial";
+      color: #eee;
+      background-color: #555;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    .agreement {
+      text-align: center;
+      margin-bottom: 70px;
+      label[for="agree"] {
+        font: 16px/1 $koreaFont;
+      }
+    }
+
+    table {
+      margin: 0 auto;
+      th {
+        font: 20px/1 $koreaFont;
+        padding: 20px 0;
+        text-align: left;
+
+        &.btns {
+          text-align: center;
+          input[type="submit"],
+          input[type="reset"] {
+            width: 150px;
+            height: 40px;
+            border: none;
+            background: #000;
+            font: bold 14px/1 "arial";
+            color: #fff;
+            margin-top: 30px;
+            cursor: pointer;
+            &:hover {
+              background-color: #333;
+            }
+          }
+        }
+      }
+      td {
+        text-align: center;
+        input {
+          padding: 10px 5px;
+          width: 100%;
+          font: 18px/1 $koreaFont;
+
+          &#year {
+            width: 30%;
+          }
+          &#day {
+            width: 30%;
+          }
+        }
+        #month {
+          width: 30%;
+          padding: 10px 5px;
+          font: 18px/1 $koreaFont;
+        }
+        #gender {
+          padding: 10px 5px;
+          width: 100%;
+          font: 18px/1 $koreaFont;
+        }
+      }
+      .birthBox {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
