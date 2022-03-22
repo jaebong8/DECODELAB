@@ -66,6 +66,7 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 brandDiv.addEventListener("click", () => {
+  brandAudio.muted = false;
   brandAudio.play();
 });
 brandDiv.addEventListener("mouseleave", () => {
