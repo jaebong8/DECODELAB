@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>프로젝트</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script
       src="https://kit.fontawesome.com/12fb802fac.js"
       crossorigin="anonymous"
@@ -63,9 +69,8 @@
 
     <figure id="visual">
       <div class="inner">
-        <h2>
-          Are you ready<br /><strong>&nbsp;&nbsp;To get Hypno'ed?</strong>
-        </h2>
+        <h2></h2>
+
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. A ut
           cupiditate perferendis soluta eveniet laudantium quibusdam corporis
@@ -121,8 +126,12 @@
               ipsum. Consequuntur saepe nihil fugiat fuga doloremque. Eveniet
             </p>
           </div>
-          <img src="img/brand1.png" alt="brand1" />
-          <img src="img/brand2.png" alt="brand2" />
+          <div class="img1">
+            <img src="img/brand3.png" alt="brand1" />
+            <audio src="img/brand_music.mp3" autoplay></audio>
+          </div>
+
+          <img class="img2" src="img/brand2.png" alt="brand2" />
         </div>
         <div class="wrap2">
           <article>
@@ -228,34 +237,81 @@
         </div>
       </div>
     </section>
-    <section id="myself">
-      <div class="inner">
-        <div class="prev"></div>
-        <div class="text">
-          <h3>Mario Gonzales</h3>
-          <h4>creative editor</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
-            eveniet quam aspernatur, ducimus temporibus incidunt ea aperiam
-            voluptatibus assumenda architecto dolor dignissimos quaerat magnam
-          </p>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            laborum possimus asperiores nihil sed voluptas rerum iste ex, animi
-            rem expedita assumenda
-          </p>
-          <div class="fonts">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fab fa-behance"></i></a>
+    <section id="myself" class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="inner swiper-slide">
+          <div class="text">
+            <h3>Mario Gonzales</h3>
+            <h4>creative editor</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
+              eveniet quam aspernatur, ducimus temporibus incidunt ea aperiam
+              voluptatibus assumenda architecto dolor dignissimos quaerat magnam
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptates laborum possimus asperiores nihil sed voluptas rerum
+              iste ex, animi rem expedita assumenda
+            </p>
+            <div class="fonts">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fab fa-behance"></i></a>
+            </div>
+          </div>
+          <div class="img">
+            <img src="img/myself1.jpg" alt="myself" />
           </div>
         </div>
-        <div class="img">
-          <img src="img/myself1.jpg" alt="myself" />
+        <div class="inner swiper-slide">
+          <div class="text">
+            <h3>Emily Robert</h3>
+            <h4>creative developer</h4>
+            <p>
+              adipisicing elit. Unde eveniet quam aspernatur, ducimus temporibus
+              incidunt ea aperiam voluptatibus assumenda architecto dolor
+              dignissimos quaerat magnam
+            </p>
+            <p>
+              Voluptates laborum possimus asperiores nihil sed voluptas rerum
+              iste ex, animi rem expedita assumenda
+            </p>
+            <div class="fonts">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fab fa-behance"></i></a>
+            </div>
+          </div>
+          <div class="img">
+            <img src="img/myself2.jpg" alt="myself2" />
+          </div>
         </div>
-
-        <div class="next"></div>
+        <div class="inner swiper-slide">
+          <div class="text">
+            <h3>Julia Lopez</h3>
+            <h4>sensitive manager</h4>
+            <p>
+              adipisicing elit. Unde eveniet quam aspernatur, ducimus temporibus
+              incidunt ea aperiam voluptatibus assumenda architecto dolor
+              dignissimos quaerat magnam
+            </p>
+            <p>
+              Voluptates laborum possimus asperiores nihil sed voluptas rerum
+              iste ex, animi rem expedita assumenda
+            </p>
+            <div class="fonts">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fab fa-behance"></i></a>
+            </div>
+          </div>
+          <div class="img">
+            <img src="img/myself3.jpg" alt="myself3" />
+          </div>
+        </div>
       </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </section>
     <section id="works">
       <div class="inner">

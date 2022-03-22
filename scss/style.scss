@@ -351,6 +351,7 @@ $mobile: 539px;
 #brand {
   width: 100%;
   padding: 150px 0;
+  overflow: hidden;
   > .inner {
     width: 1180px;
     margin: 0 auto;
@@ -378,21 +379,61 @@ $mobile: 539px;
           }
         }
       }
-      img {
-        &:nth-of-type(1) {
-          float: right;
+      .img1 {
+        float: right;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+          img {
+            filter: grayscale(0%);
+          }
+          &::after {
+            animation: cdRotate 2s linear infinite;
+            filter: grayscale(0%);
+          }
+          &::before {
+            top: 5%;
+            opacity: 1;
+          }
+        }
+        img {
           width: 500px;
           object-fit: fill;
-          margin-top: 70px;
+
           filter: grayscale(100%);
         }
-        &:nth-of-type(2) {
-          float: right;
-          width: 100px;
-          height: 400px;
-          object-fit: fill;
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          right: -45%;
+          width: 100%;
+          height: 92%;
+          z-index: -1;
+          background: url(../img/brand4.png) no-repeat center/contain;
           filter: grayscale(100%);
         }
+        &::before {
+          content: "Click! Music Start!";
+          display: block;
+          position: absolute;
+          left: 30%;
+          top: -5%;
+          z-index: 1;
+          font: bold 2.5vmin/1 $headerFont;
+          color: #eee;
+          letter-spacing: 2px;
+          opacity: 0;
+          transition: 0.5s;
+        }
+      }
+      .img2 {
+        float: right;
+        width: 100px;
+        height: 400px;
+        object-fit: fill;
+        filter: grayscale(100%);
       }
 
       &::after {
@@ -514,44 +555,24 @@ $mobile: 539px;
   width: 100%;
   background-color: #000;
   padding: 100px 0;
+  position: relative;
+  .swiper-button-next,
+  .swiper-button-prev {
+    &::after {
+      color: #fff;
+      line-height: 300px;
+    }
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
   .inner {
     width: 1180px;
     margin: 0 auto;
     position: relative;
     text-align: center;
-    .prev {
-      width: 50px;
-      height: 100%;
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      &::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: #bbb;
-        position: absolute;
-        top: 50%;
-        transform: rotate(-55deg);
-        transform-origin: left center;
-      }
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: #bbb;
-        position: absolute;
-        top: 50%;
-        transform: rotate(55deg);
-        transform-origin: left center;
-      }
-      &:hover {
-        opacity: 0.5;
-      }
-    }
+
     .text {
       display: inline-block;
       width: 400px;
@@ -598,42 +619,6 @@ $mobile: 539px;
         border-radius: 50%;
         vertical-align: middle;
         filter: grayscale(100%);
-      }
-    }
-
-    .next {
-      width: 50px;
-      height: 100%;
-      cursor: pointer;
-
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      &::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: #bbb;
-        position: absolute;
-        top: 50%;
-        transform: rotate(55deg);
-        transform-origin: right center;
-      }
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: #bbb;
-        position: absolute;
-        top: 50%;
-        transform: rotate(-55deg);
-        transform-origin: right center;
-      }
-      &:hover {
-        opacity: 0.5;
       }
     }
   }
@@ -882,6 +867,20 @@ $mobile: 539px;
   }
 }
 
+/* keyframes---------------------------------------------------------------*/
+
+@keyframes cdRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: translateX(10%) rotate(-180deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(-360deg);
+  }
+}
+
 /*tablet-----------------------------------------------------------------------*/
 @media screen and (max-width: $tablet) {
   /*header-----------------------------------------------------------------------*/
@@ -971,16 +970,17 @@ $mobile: 539px;
             }
           }
         }
-        img {
-          &:nth-of-type(1) {
-            width: 40vw;
+        .img1 {
+          width: 40vw;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
 
-            margin-top: 5vw;
-          }
-          &:nth-of-type(2) {
-            width: 7vw;
-            height: 30vw;
-          }
+        .img2 {
+          width: 7vw;
+          height: 30vw;
         }
       }
 

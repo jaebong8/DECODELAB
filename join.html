@@ -85,111 +85,115 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sit magnam iusto ve
               <label for="agree">약관에 동의합니다</label>
             </div>
             <h2>MEMBER INFORMATION</h2>
-            <table>
-              <caption class="h">
-                회원정보 입력 양식 테이블
-              </caption>
-              <th scope="col"><label for="id">아이디</label></th>
-              <tr>
-                <td>
-                  <input
-                    type="text"
-                    name="id"
-                    id="id"
-                    placeholder="아이디를 입력하세요"
-                  />
-                </td>
-              </tr>
-              <th scope="col"><label for="pwd1">비밀번호</label></th>
-              <tr>
-                <td>
-                  <input
-                    type="password"
-                    name="pwd1"
-                    id="pwd1"
-                    placeholder="비밀번호를 입력해주세요"
-                  />
-                </td>
-              </tr>
-              <th scope="col"><label for="pwd2">비밀번호 재확인</label></th>
-              <tr>
-                <td>
-                  <input
-                    type="password"
-                    name="pwd2"
-                    id="pwd2"
-                    placeholder="비밀번호를 다시 입력해주세요"
-                  />
-                </td>
-              </tr>
-              <th scope="col"><label for="name">이름</label></th>
-              <tr>
-                <td>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="이름을 입력해주세요"
-                  />
-                </td>
-              </tr>
-              <th scope="col">
-                <label for="birth">생년월일</label>
-              </th>
-              <tr>
-                <td class="birthBox">
-                  <input
-                    type="text"
-                    name="birth"
-                    id="year"
-                    placeholder="년(4자)"
-                  />
-                  <select name="birth" id="month">
-                    <option value="">월</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                  </select>
-                  <input type="text" name="birth" id="day" placeholder="일" />
-                </td>
-              </tr>
-              <th scope="col"><label for="gender">성별</label></th>
-              <tr>
-                <td>
-                  <select name="gender" id="gender">
-                    <option value="">성별</option>
-                    <option value="male">남자</option>
-                    <option value="female">여자</option>
-                  </select>
-                </td>
-              </tr>
-              <th scope="col"><label for="email">이메일</label></th>
-              <tr>
-                <td>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="이메일을 입력하세요"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th colspan="2" class="btns">
-                  <input type="reset" value="CANCEL" />
-                  <input type="submit" value="SUBMIT" />
+            <div class="wrapper">
+              <table>
+                <caption class="h">
+                  회원정보 입력 양식 테이블
+                </caption>
+                <th scope="col"><label for="id">아이디</label></th>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="id"
+                      id="id"
+                      placeholder="아이디를 입력하세요"
+                    />
+                  </td>
+                </tr>
+                <th scope="col"><label for="pwd1">비밀번호</label></th>
+                <tr>
+                  <td>
+                    <input
+                      type="password"
+                      name="pwd1"
+                      id="pwd1"
+                      placeholder="비밀번호를 입력해주세요"
+                    />
+                  </td>
+                </tr>
+                <th scope="col"><label for="pwd2">비밀번호 재확인</label></th>
+                <tr>
+                  <td>
+                    <input
+                      type="password"
+                      name="pwd2"
+                      id="pwd2"
+                      placeholder="비밀번호를 다시 입력해주세요"
+                    />
+                  </td>
+                </tr>
+                <th scope="col"><label for="name">이름</label></th>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="이름을 입력해주세요"
+                    />
+                  </td>
+                </tr>
+                <th scope="col">
+                  <label for="birth">생년월일</label>
                 </th>
-              </tr>
-            </table>
+                <tr>
+                  <td class="birthBox">
+                    <input
+                      type="text"
+                      name="birth"
+                      id="year"
+                      placeholder="년(4자)"
+                    />
+                    <select name="birth" id="month">
+                      <option value="">월</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                    <input type="text" name="birth" id="day" placeholder="일" />
+                  </td>
+                </tr>
+                <th scope="col"><label for="gender">성별</label></th>
+                <tr>
+                  <td>
+                    <select name="gender" id="gender">
+                      <option value="">성별</option>
+                      <option value="male">남자</option>
+                      <option value="female">여자</option>
+                    </select>
+                  </td>
+                </tr>
+                <th scope="col"><label for="email">이메일</label></th>
+                <tr>
+                  <td>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="이메일을 입력하세요"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2" class="btns">
+                    <input type="reset" value="CANCEL" />
+                    <input type="submit" value="SUBMIT" />
+                  </th>
+                </tr>
+              </table>
+              <img src="img/join2.jpg" alt="join2">
+            </div>
+            
           </fieldset>
         </form>
       </div>

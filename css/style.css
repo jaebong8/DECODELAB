@@ -560,19 +560,20 @@ fieldset {
 .join .inner .agreement label[for=agree] {
   font: 16px/1 "Noto Sans KR", sans-serif;
 }
-.join .inner table {
-  margin: 0 auto;
+.join .inner .wrapper {
+  display: flex;
+  justify-content: space-evenly;
 }
-.join .inner table th {
+.join .inner .wrapper table th {
   font: 20px/1 "Noto Sans KR", sans-serif;
   padding: 20px 0;
   text-align: left;
 }
-.join .inner table th.btns {
+.join .inner .wrapper table th.btns {
   text-align: center;
 }
-.join .inner table th.btns input[type=submit],
-.join .inner table th.btns input[type=reset] {
+.join .inner .wrapper table th.btns input[type=submit],
+.join .inner .wrapper table th.btns input[type=reset] {
   width: 150px;
   height: 40px;
   border: none;
@@ -582,39 +583,49 @@ fieldset {
   margin-top: 30px;
   cursor: pointer;
 }
-.join .inner table th.btns input[type=submit]:hover,
-.join .inner table th.btns input[type=reset]:hover {
+.join .inner .wrapper table th.btns input[type=submit]:hover,
+.join .inner .wrapper table th.btns input[type=reset]:hover {
   background-color: #333;
 }
-.join .inner table td {
+.join .inner .wrapper table td {
   text-align: center;
 }
-.join .inner table td input {
+.join .inner .wrapper table td input {
   padding: 10px 5px;
   width: 100%;
   font: 18px/1 "Noto Sans KR", sans-serif;
 }
-.join .inner table td input#year {
+.join .inner .wrapper table td input#year {
   width: 30%;
 }
-.join .inner table td input#day {
+.join .inner .wrapper table td input#day {
   width: 30%;
 }
-.join .inner table td #month {
+.join .inner .wrapper table td #month {
   width: 30%;
   padding: 10px 5px;
   font: 18px/1 "Noto Sans KR", sans-serif;
 }
-.join .inner table td #gender {
+.join .inner .wrapper table td #gender {
   padding: 10px 5px;
   width: 100%;
   font: 18px/1 "Noto Sans KR", sans-serif;
 }
-.join .inner table .birthBox {
+.join .inner .wrapper table .birthBox {
   display: flex;
   justify-content: space-between;
 }
+.join .inner .wrapper img {
+  width: 40%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
 
+@media screen and (max-width: 1179px) {
+  .join .wrapper img {
+    display: none;
+  }
+}
 .about .sub_visual::after {
   background: url(../img/about.jpg) no-repeat center/cover;
   background-attachment: fixed;
@@ -1116,6 +1127,7 @@ fieldset {
 #brand {
   width: 100%;
   padding: 150px 0;
+  overflow: hidden;
 }
 #brand > .inner {
   width: 1180px;
@@ -1144,14 +1156,53 @@ fieldset {
   font: 16px/1.2 "arial";
   margin-top: 10px;
 }
-#brand > .inner .wrap img:nth-of-type(1) {
+#brand > .inner .wrap .img1 {
   float: right;
+  position: relative;
+  cursor: pointer;
+}
+#brand > .inner .wrap .img1:hover img {
+  filter: grayscale(0%);
+}
+#brand > .inner .wrap .img1:hover::after {
+  animation: cdRotate 2s linear infinite;
+  filter: grayscale(0%);
+}
+#brand > .inner .wrap .img1:hover::before {
+  top: 5%;
+  opacity: 1;
+}
+#brand > .inner .wrap .img1 img {
   width: 500px;
   object-fit: fill;
-  margin-top: 70px;
   filter: grayscale(100%);
 }
-#brand > .inner .wrap img:nth-of-type(2) {
+#brand > .inner .wrap .img1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -45%;
+  width: 100%;
+  height: 92%;
+  z-index: -1;
+  background: url(../img/brand4.png) no-repeat center/contain;
+  filter: grayscale(100%);
+}
+#brand > .inner .wrap .img1::before {
+  content: "Click! Music Start!";
+  display: block;
+  position: absolute;
+  left: 30%;
+  top: -5%;
+  z-index: 1;
+  font: bold 2.5vmin/1 "Roboto", sans-serif;
+  color: #eee;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: 0.5s;
+}
+#brand > .inner .wrap .img2 {
   float: right;
   width: 100px;
   height: 400px;
@@ -1272,45 +1323,22 @@ fieldset {
   width: 100%;
   background-color: #000;
   padding: 100px 0;
+  position: relative;
+}
+#myself .swiper-button-next::after,
+#myself .swiper-button-prev::after {
+  color: #fff;
+  line-height: 300px;
+}
+#myself .swiper-button-next:hover,
+#myself .swiper-button-prev:hover {
+  opacity: 0.6;
 }
 #myself .inner {
   width: 1180px;
   margin: 0 auto;
   position: relative;
   text-align: center;
-}
-#myself .inner .prev {
-  width: 50px;
-  height: 100%;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-#myself .inner .prev::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #bbb;
-  position: absolute;
-  top: 50%;
-  transform: rotate(-55deg);
-  transform-origin: left center;
-}
-#myself .inner .prev::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #bbb;
-  position: absolute;
-  top: 50%;
-  transform: rotate(55deg);
-  transform-origin: left center;
-}
-#myself .inner .prev:hover {
-  opacity: 0.5;
 }
 #myself .inner .text {
   display: inline-block;
@@ -1354,40 +1382,6 @@ fieldset {
   border-radius: 50%;
   vertical-align: middle;
   filter: grayscale(100%);
-}
-#myself .inner .next {
-  width: 50px;
-  height: 100%;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-}
-#myself .inner .next::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #bbb;
-  position: absolute;
-  top: 50%;
-  transform: rotate(55deg);
-  transform-origin: right center;
-}
-#myself .inner .next::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #bbb;
-  position: absolute;
-  top: 50%;
-  transform: rotate(-55deg);
-  transform-origin: right center;
-}
-#myself .inner .next:hover {
-  opacity: 0.5;
 }
 
 /*works-----------------------------------------------------------------------*/
@@ -1620,6 +1614,18 @@ fieldset {
   color: #fff;
 }
 
+/* keyframes---------------------------------------------------------------*/
+@keyframes cdRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: translateX(10%) rotate(-180deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(-360deg);
+  }
+}
 /*tablet-----------------------------------------------------------------------*/
 @media screen and (max-width: 1179px) {
   /*header-----------------------------------------------------------------------*/
@@ -1701,11 +1707,14 @@ fieldset {
     font: 1.5vw/1.2 "arial";
     margin-top: 10px;
   }
-  #brand > .inner .wrap img:nth-of-type(1) {
+  #brand > .inner .wrap .img1 {
     width: 40vw;
-    margin-top: 5vw;
   }
-  #brand > .inner .wrap img:nth-of-type(2) {
+  #brand > .inner .wrap .img1 img {
+    width: 100%;
+    height: 100%;
+  }
+  #brand > .inner .wrap .img2 {
     width: 7vw;
     height: 30vw;
   }

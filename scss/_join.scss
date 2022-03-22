@@ -35,60 +35,78 @@
         font: 16px/1 $koreaFont;
       }
     }
+    .wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      table {
+        // margin: 0 auto;
+        th {
+          font: 20px/1 $koreaFont;
+          padding: 20px 0;
+          text-align: left;
 
-    table {
-      margin: 0 auto;
-      th {
-        font: 20px/1 $koreaFont;
-        padding: 20px 0;
-        text-align: left;
-
-        &.btns {
-          text-align: center;
-          input[type="submit"],
-          input[type="reset"] {
-            width: 150px;
-            height: 40px;
-            border: none;
-            background: #000;
-            font: bold 14px/1 "arial";
-            color: #fff;
-            margin-top: 30px;
-            cursor: pointer;
-            &:hover {
-              background-color: #333;
+          &.btns {
+            text-align: center;
+            input[type="submit"],
+            input[type="reset"] {
+              width: 150px;
+              height: 40px;
+              border: none;
+              background: #000;
+              font: bold 14px/1 "arial";
+              color: #fff;
+              margin-top: 30px;
+              cursor: pointer;
+              &:hover {
+                background-color: #333;
+              }
             }
           }
         }
-      }
-      td {
-        text-align: center;
-        input {
-          padding: 10px 5px;
-          width: 100%;
-          font: 18px/1 $koreaFont;
+        td {
+          text-align: center;
+          input {
+            padding: 10px 5px;
+            width: 100%;
+            font: 18px/1 $koreaFont;
 
-          &#year {
-            width: 30%;
+            &#year {
+              width: 30%;
+            }
+            &#day {
+              width: 30%;
+            }
           }
-          &#day {
+          #month {
             width: 30%;
+            padding: 10px 5px;
+            font: 18px/1 $koreaFont;
+          }
+          #gender {
+            padding: 10px 5px;
+            width: 100%;
+            font: 18px/1 $koreaFont;
           }
         }
-        #month {
-          width: 30%;
-          padding: 10px 5px;
-          font: 18px/1 $koreaFont;
-        }
-        #gender {
-          padding: 10px 5px;
-          width: 100%;
-          font: 18px/1 $koreaFont;
+        .birthBox {
+          display: flex;
+          justify-content: space-between;
         }
       }
-      .birthBox {
-        display: flex;
-        justify-content: space-between;
+      img {
+        width: 40%;
+        object-fit: cover;
+        filter: grayscale(100%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .join {
+    .wrapper {
+      img {
+        display: none;
       }
     }
   }
