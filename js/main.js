@@ -3,6 +3,9 @@ const menuMo = document.querySelector(".menuMo");
 const brand = document.querySelector("#brand");
 const brandDiv = brand.querySelector(".img1");
 const brandAudio = brandDiv.querySelector("audio");
+const works = document.querySelector("#works");
+const lists = works.querySelectorAll("ul li");
+const wraps = works.querySelectorAll(".wrap2");
 
 //visual auto typing
 const visualH2 = document.querySelector("#visual .inner h2");
@@ -11,6 +14,20 @@ const strTxt = "To get Hypno'ed?";
 let typingBool = false;
 let typingIdx = 0;
 let typingIdx2 = 0;
+//visual auto typing
+const TypingTxt = H2Txt.split("");
+const TypingStr = strTxt.split("");
+
+// 스와이퍼
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  speed: 500,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  loop: true,
+});
 
 //btnCall을 클릭했을 때
 btnCall.onclick = function (e) {
@@ -23,14 +40,23 @@ btnCall.onclick = function (e) {
   menuMo.classList.toggle("on");
 };
 
-//visual auto typing
-const TypingTxt = H2Txt.split("");
-const TypingStr = strTxt.split("");
-
 if (typingBool == false) {
   typingBool = true;
   Typing();
 }
+
+//음악 재생
+
+brandDiv.addEventListener("click", () => {
+  brandAudio.muted = false;
+  brandAudio.play();
+});
+brandDiv.addEventListener("mouseleave", () => {
+  brandAudio.load();
+  brandAudio.pause();
+});
+
+// 오토 타이핑
 function Typing() {
   setTimeout(() => {
     let TypingInt = setInterval(() => {
@@ -56,20 +82,19 @@ function Typing() {
   });
 }
 
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  loop: true,
-});
+lists.forEach((el, index) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isOn = el.classList.contains("on");
+    if (isOn) return;
+    for (list of lists) {
+      list.classList.remove("on");
+    }
+    el.classList.add("on");
 
-brandDiv.addEventListener("click", () => {
-  brandAudio.muted = false;
-  brandAudio.play();
-});
-brandDiv.addEventListener("mouseleave", () => {
-  brandAudio.load();
-  brandAudio.pause();
+    wraps.forEach((wrap) => {
+      wrap.classList.remove("on");
+    });
+    wraps[index].classList.add("on");
+  });
 });
