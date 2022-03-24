@@ -1325,6 +1325,12 @@ fieldset {
   padding: 100px 0;
   position: relative;
 }
+#myself .swiper-button-next {
+  right: 10%;
+}
+#myself .swiper-button-prev {
+  left: 10%;
+}
 #myself .swiper-button-next::after,
 #myself .swiper-button-prev::after {
   color: #fff;
@@ -1485,7 +1491,7 @@ fieldset {
 
 /*news-----------------------------------------------------------------------*/
 #news {
-  padding: 100px 0;
+  padding: 210px 0;
   background-color: #eee;
 }
 #news .inner {
@@ -1500,7 +1506,7 @@ fieldset {
   padding: 10px 30px;
   width: 100%;
   position: absolute;
-  top: -127px;
+  top: -237px;
 }
 #news .inner h4 strong {
   font: 34px/1 "Roboto", sans-serif;
@@ -1563,6 +1569,29 @@ fieldset {
   content: "";
   display: block;
   clear: both;
+}
+
+/* Scroll_nav------------------------------------------------------*/
+.scroll_nav {
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.scroll_nav li {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #dfdfc7;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.scroll_nav li.on {
+  height: 100px;
+  border-radius: 5px;
+  background-color: #ececb7;
 }
 
 /*footer-----------------------------------------------------------------------*/
@@ -1962,6 +1991,11 @@ fieldset {
     width: 100%;
     margin: 0;
     margin-top: 20px;
+  }
+
+  /* scroll btn-----------------------------------------------------------*/
+  .scroll_nav {
+    display: none;
   }
 
   /*footer-----------------------------------------------------------------------*/
