@@ -564,6 +564,9 @@ fieldset {
   display: flex;
   justify-content: space-evenly;
 }
+.join .inner .wrapper table {
+  width: 40%;
+}
 .join .inner .wrapper table th {
   font: 20px/1 "Noto Sans KR", sans-serif;
   padding: 20px 0;
@@ -588,21 +591,15 @@ fieldset {
   background-color: #333;
 }
 .join .inner .wrapper table td {
-  text-align: center;
+  text-align: left;
 }
 .join .inner .wrapper table td input {
   padding: 10px 5px;
   width: 100%;
   font: 18px/1 "Noto Sans KR", sans-serif;
 }
-.join .inner .wrapper table td input#year {
-  width: 30%;
-}
-.join .inner .wrapper table td input#day {
-  width: 30%;
-}
 .join .inner .wrapper table td #month {
-  width: 30%;
+  width: 100%;
   padding: 10px 5px;
   font: 18px/1 "Noto Sans KR", sans-serif;
 }
@@ -611,19 +608,52 @@ fieldset {
   width: 100%;
   font: 18px/1 "Noto Sans KR", sans-serif;
 }
+.join .inner .wrapper table td p {
+  display: inline-block;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
 .join .inner .wrapper table .birthBox {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
-.join .inner .wrapper img {
+.join .inner .wrapper table .birthBox .year_box {
+  width: 30%;
+}
+.join .inner .wrapper table .birthBox .month_box {
+  width: 30%;
+}
+.join .inner .wrapper table .birthBox .day_box {
+  width: 30%;
+}
+.join .inner .wrapper .img {
   width: 40%;
-  object-fit: cover;
+  background: url(../img/join2.jpg) no-repeat bottom/cover;
+  background-attachment: fixed;
   filter: grayscale(100%);
 }
 
 @media screen and (max-width: 1179px) {
-  .join .wrapper img {
+  .join .inner .wrapper table {
+    width: 80%;
+  }
+  .join .inner .wrapper .img {
     display: none;
+  }
+}
+@media screen and (max-width: 539px) {
+  .join .inner .wrapper table .birthBox .year_box {
+    width: 100%;
+  }
+  .join .inner .wrapper table .birthBox .month_box {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .join .inner .wrapper table .birthBox .day_box {
+    width: 100%;
+    margin-top: 10px;
   }
 }
 .about .sub_visual::after {
@@ -1583,7 +1613,7 @@ fieldset {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #dfdfc7;
+  background-color: #ffc400;
   margin-bottom: 20px;
   cursor: pointer;
   transition: 0.5s;
@@ -1591,7 +1621,8 @@ fieldset {
 .scroll_nav li.on {
   height: 100px;
   border-radius: 5px;
-  background-color: #ececb7;
+  background-color: #ffc400;
+  filter: contrast(140%);
 }
 
 /*footer-----------------------------------------------------------------------*/

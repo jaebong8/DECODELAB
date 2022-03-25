@@ -39,6 +39,7 @@
       display: flex;
       justify-content: space-evenly;
       table {
+        width: 40%;
         // margin: 0 auto;
         th {
           font: 20px/1 $koreaFont;
@@ -64,21 +65,14 @@
           }
         }
         td {
-          text-align: center;
+          text-align: left;
           input {
             padding: 10px 5px;
             width: 100%;
             font: 18px/1 $koreaFont;
-
-            &#year {
-              width: 30%;
-            }
-            &#day {
-              width: 30%;
-            }
           }
           #month {
-            width: 30%;
+            width: 100%;
             padding: 10px 5px;
             font: 18px/1 $koreaFont;
           }
@@ -87,15 +81,33 @@
             width: 100%;
             font: 18px/1 $koreaFont;
           }
+          p {
+            display: inline-block;
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+          }
         }
         .birthBox {
           display: flex;
           justify-content: space-between;
+          flex-wrap: wrap;
+          .year_box {
+            width: 30%;
+          }
+          .month_box {
+            width: 30%;
+          }
+          .day_box {
+            width: 30%;
+          }
         }
       }
-      img {
+      .img {
         width: 40%;
-        object-fit: cover;
+
+        background: url(../img/join2.jpg) no-repeat bottom/cover;
+        background-attachment: fixed;
         filter: grayscale(100%);
       }
     }
@@ -104,10 +116,31 @@
 
 @media screen and (max-width: $tablet) {
   .join {
-    .wrapper {
-      img {
-        display: none;
+    .inner {
+      .wrapper {
+        table {
+          width: 80%;
+        }
+        .img {
+          display: none;
+        }
       }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .join .inner .wrapper table .birthBox {
+    .year_box {
+      width: 100%;
+    }
+    .month_box {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .day_box {
+      width: 100%;
+      margin-top: 10px;
     }
   }
 }

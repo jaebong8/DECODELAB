@@ -9,7 +9,7 @@ const scrollSections = document.querySelectorAll(".scroll_section");
 const scroll_nav = document.querySelector(".scroll_nav");
 const scroll_lis = scroll_nav.querySelectorAll("li");
 let heightArr = [];
-let base = -50;
+let base = -100;
 let enableClick = true;
 
 //visual auto typing

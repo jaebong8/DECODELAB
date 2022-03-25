@@ -11,6 +11,7 @@
     ></script>
     <link rel="stylesheet" href="css/style.css" />
     <script src=js/main.js" defer></script>
+    <script src="js/join.js" defer></script>
   </head>
   <body>
     <header id="header_sub">
@@ -67,7 +68,7 @@
       <div class="inner">
         <h1>Join <span>회원가입</span></h1>
         <!-- 컨텐츠가 들어갈 부분 -->
-        <form action="result.html">
+        <form action="result.html" id="sign_up">
           <fieldset>
             <legend class="h">회원가입양식폼</legend>
             <h2><label for="terms">Terms & Policy</label></h2>
@@ -139,12 +140,15 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sit magnam iusto ve
                 </th>
                 <tr>
                   <td class="birthBox">
-                    <input
+                    <div class="year_box">
+                      <input
                       type="text"
-                      name="birth"
+                      name="year"
                       id="year"
                       placeholder="년(4자)"
                     />
+                    </div>
+                   <div class="month_box">
                     <select name="birth" id="month">
                       <option value="">월</option>
                       <option value="1">1</option>
@@ -160,24 +164,30 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sit magnam iusto ve
                       <option value="11">11</option>
                       <option value="12">12</option>
                     </select>
-                    <input type="text" name="birth" id="day" placeholder="일" />
+                   </div>
+                   <div class="day_box">
+                    <input type="text" name="day" id="day" placeholder="일" />
+                   </div>
+                   
                   </td>
                 </tr>
                 <th scope="col"><label for="gender">성별</label></th>
                 <tr>
                   <td>
-                    <select name="gender" id="gender">
-                      <option value="">성별</option>
-                      <option value="male">남자</option>
-                      <option value="female">여자</option>
-                    </select>
+                    <div class="gender_box">
+                      <select name="gender" id="gender">
+                        <option value="">성별</option>
+                        <option value="male">남자</option>
+                        <option value="female">여자</option>
+                      </select>
+                    </div>
                   </td>
                 </tr>
                 <th scope="col"><label for="email">이메일</label></th>
                 <tr>
                   <td>
                     <input
-                      type="email"
+                      type="text"
                       name="email"
                       id="email"
                       placeholder="이메일을 입력하세요"
@@ -191,7 +201,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sit magnam iusto ve
                   </th>
                 </tr>
               </table>
-              <img src="img/join2.jpg" alt="join2">
+              <div class="img"></div>
+              
             </div>
             
           </fieldset>

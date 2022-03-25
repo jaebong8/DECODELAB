@@ -842,7 +842,7 @@ $mobile: 539px;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: rgb(223, 223, 199);
+    background-color: #ffc400;
     margin-bottom: 20px;
     cursor: pointer;
     transition: 0.5s;
@@ -850,7 +850,8 @@ $mobile: 539px;
     &.on {
       height: 100px;
       border-radius: 5px;
-      background-color: rgb(236, 236, 183);
+      background-color: #ffc400;
+      filter: contrast(140%);
     }
   }
 }
