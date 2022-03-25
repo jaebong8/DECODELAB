@@ -385,7 +385,7 @@ fieldset {
   }
 }
 .community .sub_visual::after {
-  background: url(../img/community.jpg) no-repeat bottom/cover;
+  background: url(../img/community2.jpg) no-repeat center/cover;
   background-attachment: fixed;
 }
 .community .inner .news {
