@@ -17,7 +17,7 @@
 
         .short {
           position: relative;
-          background-color: #777;
+          background-color: #eee;
           padding: 10px;
           h3 {
             font: bold 16px/1 $sora;
@@ -46,13 +46,33 @@
               cursor: pointer;
               color: #333;
             }
+            &:hover {
+              i {
+                animation: hoverAni linear 0.3s infinite;
+              }
+            }
+          }
+          &.on {
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0%;
+              padding: 0;
+              background-color: #ddd;
+              width: 100%;
+              height: 100%;
+              opacity: 0.6;
+            }
           }
         }
         .detail {
           background-color: #eee;
           display: none;
-
+          border-top: 1px solid #ddd;
           transition: 1s;
+          padding: 5px;
           .text {
             display: flex;
             flex-direction: column;
@@ -64,11 +84,12 @@
               margin-top: 20px;
             }
             p {
-              font: 16px/1.3 "arial";
-              color: #555;
+              font: 16px/1.3 $headerFont;
+              color: #666;
             }
             span {
               font: 16px/1 $sora;
+              color: #888;
             }
           }
           img {
@@ -199,10 +220,55 @@
   }
 }
 
+/* animation------------------------------------------------------------------*/
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+}
+@keyframes hoverAni {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
 /* tablet--------------------------------------------------------------*/
 @media screen and (max-width: $tablet) {
   .community {
     .inner {
+      .news {
+        article {
+          .detail {
+            .text {
+              p {
+                margin-top: 20px;
+                font: 16px/1.3 "arial";
+                color: #555;
+              }
+              span {
+                margin-top: 20px;
+                font: 16px/1 $sora;
+              }
+            }
+            img {
+              width: 50vmin;
+            }
+            &.on {
+              display: flex;
+              animation: drop 0.5s linear;
+            }
+          }
+        }
+      }
       h1 {
         span {
           margin-top: 10px;
@@ -246,22 +312,40 @@
     }
   }
 }
-/* animation------------------------------------------------------------------*/
-@keyframes drop {
-  0% {
-    opacity: 0;
-    transform: translateY(-200px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(0px);
-  }
-}
+
 /* mobile------------------------------------------------------------------------- */
 
 @media screen and (max-width: $mobile) {
   .community {
     .inner {
+      .news {
+        article {
+          .detail {
+            flex-direction: column;
+            .text {
+              order: 2;
+              p {
+                margin-top: 20px;
+                font: 16px/1.3 "arial";
+                color: #555;
+              }
+              span {
+                margin-top: 20px;
+                font: 16px/1 $sora;
+              }
+            }
+            img {
+              margin-top: 20px;
+              width: 100%;
+              order: 1;
+            }
+            &.on {
+              display: flex;
+              animation: drop 0.5s linear;
+            }
+          }
+        }
+      }
       table {
         thead {
           > tr {
