@@ -227,15 +227,23 @@
       filter: brightness(40%);
       background-attachment: fixed;
     }
-
-    p {
-      font: 36px/1 $headerFont;
+    .text {
+      width: 50%;
       position: absolute;
-      color: #fff;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: -5%;
+      left: 5%;
       z-index: 2;
+      p {
+        font: 13vmin/1.1 $sora;
+
+        color: #eee;
+      }
+      span {
+        display: block;
+        font: 5vmin/1 $Alegreya;
+        color: #ddd;
+        margin-left: 5%;
+      }
     }
   }
   .inner {
@@ -352,6 +360,10 @@
     .sub_visual {
       height: 200px;
       margin-bottom: 80px;
+      .text {
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
     .inner {
       width: 100%;
