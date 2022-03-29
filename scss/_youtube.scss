@@ -77,10 +77,14 @@
       background-color: #fff;
       font-family: $sora;
       cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        transform: translateX(-50%) scale(0.9);
+      }
     }
   }
 }
-aside {
+.youtube_aside {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -101,7 +105,14 @@ aside {
     letter-spacing: 2px;
     padding: 5px;
     cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      transform: scale(0.9);
+    }
   }
+}
+
+@keyframes scaleUp {
 }
 
 @media screen and (max-width: $tablet) {
@@ -119,7 +130,7 @@ aside {
       }
     }
   }
-  aside {
+  .youtube_aside {
     width: 100%;
     height: 100%;
     position: fixed;

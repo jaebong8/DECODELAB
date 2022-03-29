@@ -84,6 +84,7 @@ function createPop(e) {
   if (!e.target.closest("a")) return;
   const vidId = e.target.closest("a").getAttribute("data-vid");
   let pop = document.createElement("aside");
+  pop.classList.add("youtube_aside");
   pop.innerHTML = `
       <iframe src="https://www.youtube.com/embed/${vidId}" frameborder="0" width="100%" height="100%" allowfullscreen>
       </iframe>

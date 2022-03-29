@@ -1083,9 +1083,13 @@ fieldset {
   background-color: #fff;
   font-family: "Sora", sans-serif;
   cursor: pointer;
+  transition: 0.5s;
+}
+.youtube .main > span:hover {
+  transform: translateX(-50%) scale(0.9);
 }
 
-aside {
+.youtube_aside {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -1095,7 +1099,7 @@ aside {
   padding: 8vh 5vw;
   background-color: rgba(0, 0, 0, 0.8);
 }
-aside .btnClose {
+.youtube_aside .btnClose {
   position: absolute;
   top: 3%;
   right: 5%;
@@ -1106,8 +1110,13 @@ aside .btnClose {
   letter-spacing: 2px;
   padding: 5px;
   cursor: pointer;
+  transition: 0.5s;
+}
+.youtube_aside .btnClose:hover {
+  transform: scale(0.9);
 }
 
+@keyframes scaleUp {}
 @media screen and (max-width: 1179px) {
   .youtube .main article .con span {
     position: absolute;
@@ -1116,7 +1125,7 @@ aside .btnClose {
     top: auto;
   }
 
-  aside {
+  .youtube_aside {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -1126,7 +1135,7 @@ aside .btnClose {
     padding: 8vh 5vw;
     background-color: rgba(0, 0, 0, 0.8);
   }
-  aside .btnClose {
+  .youtube_aside .btnClose {
     position: absolute;
     top: 3%;
     right: 5%;
@@ -1142,6 +1151,320 @@ aside .btnClose {
 @media screen and (max-width: 539px) {
   .youtube .main article .pic {
     margin-top: 100px;
+  }
+}
+.portfolio {
+  background-color: #000;
+}
+.portfolio .sub_visual::after {
+  background: url(../img/gallery.jpg) no-repeat bottom/cover;
+  background-attachment: fixed;
+}
+.portfolio .inner h1 {
+  color: #fff;
+}
+.portfolio .inner .loading {
+  width: 300px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+.portfolio .inner .loading.off {
+  opacity: 0;
+}
+.portfolio .inner #searchBox {
+  width: 100%;
+  padding: 50px;
+  font-size: 0;
+}
+.portfolio .inner #searchBox #search {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #333;
+  padding-left: 10px;
+  background-color: transparent;
+  color: #fff;
+  font-family: "Noto Sans KR", sans-serif;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+}
+.portfolio .inner #searchBox #search:focus {
+  outline: none;
+}
+.portfolio .inner #searchBox .btnSearch {
+  width: 80px;
+  height: 40px;
+  background-color: #333;
+  font: bold 14px/40px "Alegreya Sans SC", sans-serif;
+  color: #fff;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  vertical-align: top;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+}
+.portfolio .inner #searchBox .btnSearch:hover {
+  background-color: #222;
+}
+.portfolio .inner #gallery {
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.4);
+}
+.portfolio .inner #gallery.on {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.portfolio .inner #gallery::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.portfolio .inner #gallery .item {
+  width: 25%;
+  float: left;
+}
+.portfolio .inner #gallery .item > div {
+  width: 100%;
+  background-color: #000;
+  padding: 5px;
+  position: relative;
+}
+.portfolio .inner #gallery .item > div:hover .pic img {
+  filter: brightness(90%);
+  transform: scale(1.2);
+}
+.portfolio .inner #gallery .item > div:hover p {
+  top: 50%;
+  opacity: 1;
+}
+.portfolio .inner #gallery .item > div .pic {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.portfolio .inner #gallery .item > div .pic img {
+  width: 100%;
+  filter: brightness(70%);
+  transition: 0.8s;
+  object-fit: fill;
+}
+.portfolio .inner #gallery .item > div p {
+  color: #777;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: bold 12px/1 "Sora", sans-serif;
+  color: #fff;
+  opacity: 0;
+  transition: 1s;
+}
+.portfolio .inner #gallery .item > div .profile {
+  display: flex;
+  align-items: center;
+}
+.portfolio .inner #gallery .item > div .profile img {
+  width: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.portfolio .inner #gallery .item > div .profile span {
+  font: 11px/1 "arial";
+  color: #999;
+}
+
+.gallery_aside {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding: 0px;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery_aside.off {
+  animation: asideOff 1s linear;
+}
+.gallery_aside .popImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.gallery_aside .popImg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 1s;
+  animation: imgLoading linear 1s;
+}
+.gallery_aside .popImg .profile {
+  width: 8vmin;
+  position: absolute;
+  top: 6%;
+  left: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: Up linear 1s 1s;
+  animation-fill-mode: forwards;
+}
+.gallery_aside .popImg .profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 50%;
+}
+.gallery_aside .popImg .profile span {
+  margin-top: 10px;
+  font: 1vw/1 "Sora", sans-serif;
+  color: #fff;
+  text-shadow: 0px 0px 2px #000;
+}
+.gallery_aside p {
+  width: 100%;
+  text-align: center;
+  font: 5vw/1 "Alegreya Sans SC", sans-serif;
+  color: #fff;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: titleLoading 2s linear 1s;
+}
+.gallery_aside .btnClose {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.gallery_aside .btnClose::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: rotate(45deg);
+  transition: transform 0.5s, left 1s 0.5s, opacity 0.5s 0.5s;
+}
+.gallery_aside .btnClose::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: rotate(-45deg);
+  transition: transform 0.5s, left 1s 0.5s, opacity 0.5s 0.5s;
+}
+.gallery_aside .btnClose.on::before {
+  transform: rotate(0deg);
+  left: -20px;
+  opacity: 0;
+}
+.gallery_aside .btnClose.on::after {
+  transform: rotate(0deg);
+  left: 20px;
+  opacity: 0;
+}
+
+@keyframes imgLoading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes titleLoading {
+  0% {
+    opacity: 0;
+    top: 60%;
+  }
+  25% {
+    opacity: 1;
+    top: 50%;
+  }
+  50% {
+    opacity: 1;
+    top: 50%;
+  }
+  75% {
+    opacity: 1;
+    top: 50%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Up {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+}
+@keyframes asideOff {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 1179px) {
+  .portfolio .inner #gallery .item {
+    width: 50%;
+  }
+
+  .gallery_aside {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 539px) {
+  .portfolio .inner #searchBox {
+    text-align: center;
+  }
+  .portfolio .inner #searchBox #search {
+    width: 100%;
+  }
+  .portfolio .inner #searchBox .btnSearch {
+    width: 100%;
+  }
+  .portfolio .inner #gallery .item {
+    width: 100%;
+  }
+
+  .gallery_aside {
+    padding: 10px;
+  }
+  .gallery_aside .popImg .profile span {
+    width: 50px;
   }
 }
 /*header-----------------------------------------------------------------------*/
