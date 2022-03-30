@@ -1,3 +1,4 @@
+const body = document.querySelector("body");
 const brand = document.querySelector("#brand");
 const brandDiv = brand.querySelector(".img1");
 const brandAudio = brandDiv.querySelector("audio");
@@ -32,6 +33,60 @@ const swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
   loop: true,
+});
+
+//svg 제어
+const pie1 = document.querySelector(".pie1");
+const pie2 = document.querySelector(".pie2");
+const pie3 = document.querySelector(".pie3");
+
+//쿠키 팝업
+const popup = document.querySelector("#popup");
+const weekBtn = popup.querySelector(".weekLater");
+const agreeBtn = popup.querySelector(".agree");
+const closeBtn = popup.querySelector(".pop-close");
+const isCookie = document.cookie.indexOf("pop=done");
+
+if (isCookie == -1) {
+  popup.style.display = "flex";
+} else {
+  popup.style.display = "none";
+}
+
+closeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  closePopup();
+});
+
+agreeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  setCookie("pop", "done", 365);
+  closePopup();
+});
+weekBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  setCookie("pop", "done", 7);
+  closePopup();
+});
+
+window.addEventListener("scroll", () => {
+  let bodyHeight = body.scrollHeight;
+  let scroll = window.scrollY || window.pageYOffset;
+  let percent = parseInt((scroll / (bodyHeight - window.innerHeight)) * 100);
+
+  // 전체 화면 20%~ 34% 구간에서 이벤트 발생
+  if (percent >= 20 && percent <= 34) {
+    let cScroll1 = percent - 20;
+    let cScroll2 = percent - 20;
+    let cScroll3 = percent - 20;
+    cScroll1 = cScroll1 * 31;
+    cScroll2 = cScroll2 * 29;
+    cScroll3 = cScroll3 * 27;
+
+    pie1.style.strokeDashoffset = 471 + cScroll1;
+    pie2.style.strokeDashoffset = 471 + cScroll2;
+    pie3.style.strokeDashoffset = 471 + cScroll3;
+  }
 });
 
 //btnCall을 클릭했을 때
@@ -81,7 +136,12 @@ lists.forEach((el, index) => {
 
 // 스크롤 액션 --------------------------------------
 setHeight();
-window.addEventListener("resize", setHeight);
+window.addEventListener("resize", () => {
+  setHeight();
+  let bodyHeight = body.scrollHeight;
+  let scroll = window.scrollY || window.pageYOffset;
+  let percent = parseInt((scroll / (bodyHeight - window.innerHeight)) * 100);
+});
 scroll_lis.forEach((li, index) => {
   li.addEventListener("click", (e) => {
     let isOn = e.currentTarget.classList.contains("on");
@@ -94,6 +154,15 @@ scroll_lis.forEach((li, index) => {
 });
 
 window.addEventListener("scroll", activation);
+
+//쿠키 생성
+function setCookie(name, val, due) {
+  const today = new Date();
+  const day = today.getDate();
+  today.setDate(day + due);
+  const duedate = today.toGMTString();
+  document.cookie = `${name}=${val}; path=/; expires=${duedate}`;
+}
 
 function setHeight() {
   heightArr = [];
@@ -155,5 +224,16 @@ function Typing() {
         }, 100);
       }
     }, 100);
+  });
+}
+
+function closePopup() {
+  new Anime(popup, {
+    prop: "bottom",
+    value: "-20",
+    duration: 1000,
+    callback: () => {
+      popup.remove();
+    },
   });
 }

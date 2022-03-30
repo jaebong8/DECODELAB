@@ -449,6 +449,7 @@ $mobile: 539px;
       width: 100%;
       margin-top: 150px;
       article {
+        display: flex;
         width: 380px;
         position: relative;
         float: left;
@@ -456,30 +457,46 @@ $mobile: 539px;
         &:last-child {
           margin-right: 0;
         }
-        .circle {
-          position: absolute;
-          width: 150px;
-          height: 150px;
-          border: 5px solid #bbb;
-          border-radius: 50%;
-          border-right: 5px solid #fff;
-          text-align: center;
-          font: 42px/140px "arial";
-        }
-        h3 {
-          margin-left: 160px;
-          font: bold 30px/1 $headerFont;
-        }
-        p {
-          margin-left: 160px;
-          &:nth-of-type(1) {
-            font: 12px/1 "arial";
-            color: #aaa;
-            margin-top: 5px;
+        .circle_box {
+          position: relative;
+          display: inline-block;
+          .circle_svg {
+            border-radius: 50%;
+            background-color: transparent;
+            transform: rotate(-90deg);
+
+            circle {
+              fill: transparent;
+              stroke: #666;
+              stroke-width: 15px;
+              stroke-dasharray: 471;
+              stroke-dashoffset: 471;
+            }
           }
-          &:nth-of-type(2) {
-            margin-top: 20px;
-            font: 16px/1.2 $headerFont;
+          span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font: 42px/140px "arial";
+          }
+        }
+
+        .con {
+          margin-left: 20px;
+          h3 {
+            font: bold 30px/1 $headerFont;
+          }
+          p {
+            &:nth-of-type(1) {
+              font: 12px/1 "arial";
+              color: #aaa;
+              margin-top: 5px;
+            }
+            &:nth-of-type(2) {
+              margin-top: 20px;
+              font: 16px/1.2 $headerFont;
+            }
           }
         }
       }
@@ -845,7 +862,8 @@ $mobile: 539px;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #ffc400;
+    background-color: #333;
+    border: 1px solid #eee;
     margin-bottom: 20px;
     cursor: pointer;
     transition: 0.5s;
@@ -853,7 +871,7 @@ $mobile: 539px;
     &.on {
       height: 50px;
       border-radius: 5px;
-      background-color: #ffc400;
+      background-color: #000;
       filter: contrast(140%);
     }
   }
@@ -929,6 +947,63 @@ $mobile: 539px;
   }
 }
 
+#popup {
+  width: 100%;
+  height: 20%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  animation: createPopup 1s linear;
+
+  h2 {
+    margin-bottom: 20px;
+    font-family: $Alegreya;
+    letter-spacing: 1px;
+    font-size: 28px;
+  }
+  p {
+    margin-bottom: 25px;
+    font-family: $Alegreya;
+    letter-spacing: 1px;
+    color: #aaa;
+    text-align: center;
+  }
+  .btns {
+    a {
+      font-family: $Alegreya;
+      margin-right: 50px;
+      color: #fff;
+      padding: 10px;
+      transition: 0.5s;
+      &:hover {
+        color: orangered;
+      }
+    }
+  }
+  .pop-close {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    transition: 0.5s;
+    &:hover {
+      .fa-window-close {
+        color: orangered;
+      }
+    }
+    .fa-window-close {
+      font-size: 32px;
+      color: #fff;
+      transition: 0.5s;
+    }
+  }
+}
 /* keyframes---------------------------------------------------------------*/
 
 @keyframes cdRotate {
@@ -953,6 +1028,15 @@ $mobile: 539px;
     opacity: 1;
   }
 }
+@keyframes createPopup {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /*tablet-----------------------------------------------------------------------*/
 @media screen and (max-width: $tablet) {
   /*header-----------------------------------------------------------------------*/
@@ -1339,5 +1423,8 @@ $mobile: 539px;
   #footer {
     padding: 50px 30px;
     height: auto;
+  }
+  #popup .pop-close .fa-window-close {
+    font-size: 24px;
   }
 }

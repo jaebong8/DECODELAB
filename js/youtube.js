@@ -1,4 +1,5 @@
 const body = document.querySelector("body");
+const youtubeFrame = document.querySelector(".youtube");
 
 const key = "AIzaSyAzYVJDYEW0ZMkEgOcf0HsPuzMOc9k-g-4";
 
@@ -6,7 +7,16 @@ const main = document.querySelector(".main");
 
 const playListId = "PLCCz4evGBSLWajFB9WT7n3RrP7yYrDzRI";
 let num = 4;
+const colorChange = document.querySelector(".colorChange");
+const ball = colorChange.querySelector(".ball");
+
 crateItem(num);
+
+ball.addEventListener("click", (e) => {
+  youtubeFrame.classList.toggle("white");
+  ball.classList.toggle("on");
+  colorChange.classList.toggle("on");
+});
 
 main.addEventListener("click", (e) => {
   createPop(e);

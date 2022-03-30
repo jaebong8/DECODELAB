@@ -228,19 +228,18 @@
       background-attachment: fixed;
     }
     .text {
-      width: 50%;
       position: absolute;
-      top: -5%;
-      left: 5%;
+      bottom: -11%;
+      right: 3%;
       z-index: 2;
       p {
         font: 13vmin/1.1 $sora;
 
-        color: #eee;
+        color: #fff;
       }
       span {
         display: block;
-        font: 5vmin/1 $Alegreya;
+        font: 18px/1 $Alegreya;
         color: #ddd;
         margin-left: 5%;
       }
@@ -360,10 +359,6 @@
     .sub_visual {
       height: 200px;
       margin-bottom: 80px;
-      .text {
-        top: 50%;
-        transform: translateY(-50%);
-      }
     }
     .inner {
       width: 100%;

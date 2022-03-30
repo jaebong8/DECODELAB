@@ -236,19 +236,18 @@ fieldset {
   background-attachment: fixed;
 }
 .content .sub_visual .text {
-  width: 50%;
   position: absolute;
-  top: -5%;
-  left: 5%;
+  bottom: -11%;
+  right: 3%;
   z-index: 2;
 }
 .content .sub_visual .text p {
   font: 13vmin/1.1 "Sora", sans-serif;
-  color: #eee;
+  color: #fff;
 }
 .content .sub_visual .text span {
   display: block;
-  font: 5vmin/1 "Alegreya Sans SC", sans-serif;
+  font: 18px/1 "Alegreya Sans SC", sans-serif;
   color: #ddd;
   margin-left: 5%;
 }
@@ -356,10 +355,6 @@ fieldset {
   .content .sub_visual {
     height: 200px;
     margin-bottom: 80px;
-  }
-  .content .sub_visual .text {
-    top: 50%;
-    transform: translateY(-50%);
   }
   .content .inner {
     width: 100%;
@@ -1016,6 +1011,38 @@ fieldset {
   background: url(../img/youtube.jpg) no-repeat bottom/cover;
   background-attachment: fixed;
 }
+.youtube .colorChange {
+  width: 150px;
+  height: 50px;
+  background-color: #fff;
+  margin: 30px 0 0 30px;
+  border-radius: 30px;
+  position: relative;
+}
+.youtube .colorChange.on {
+  background-color: #000;
+}
+.youtube .colorChange .ball {
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  width: 45px;
+  height: 45px;
+  background-color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s;
+}
+.youtube .colorChange .ball.on {
+  position: absolute;
+  top: 2.5px;
+  left: 100px;
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
 .youtube .main {
   width: 100%;
   padding: 100px 0;
@@ -1116,6 +1143,90 @@ fieldset {
   transform: scale(0.9);
 }
 
+.youtube.white {
+  background-color: #fff;
+  padding: 0;
+}
+.youtube.white .sub_visual {
+  margin-bottom: 0;
+}
+.youtube.white .sub_visual::after {
+  background: url(../img/youtube.jpg) no-repeat bottom/cover;
+  background-attachment: fixed;
+}
+.youtube.white .main {
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+}
+.youtube.white .main article {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+  font-family: "Alegreya Sans SC", sans-serif;
+  position: relative;
+  padding: 50px 0;
+  transition: 0.5s;
+  animation: drop 1s linear;
+}
+.youtube.white .main article:first-child {
+  border-top: 1px solid #000;
+}
+.youtube.white .main article .pic {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.youtube.white .main article .pic img {
+  width: 30vw;
+  min-width: 300px;
+  object-fit: cover;
+}
+.youtube.white .main article .con {
+  width: 100%;
+}
+.youtube.white .main article .con h2 {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color: #000;
+  text-align: center;
+  font-size: 30px;
+}
+.youtube.white .main article .con p {
+  width: 50%;
+  color: #000;
+  text-align: center;
+  margin: 0 auto;
+}
+.youtube.white .main article .con span {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: #000;
+  font-size: 16px;
+}
+.youtube.white .main > span {
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #000;
+  font-family: "Sora", sans-serif;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.youtube.white .main > span:hover {
+  transform: translateX(-50%) scale(0.9);
+}
+
 @keyframes scaleUp {}
 @media screen and (max-width: 1179px) {
   .youtube .main article .con span {
@@ -1173,6 +1284,39 @@ fieldset {
 }
 .portfolio .inner .loading.off {
   opacity: 0;
+}
+.portfolio .inner .colorChange {
+  width: 150px;
+  height: 50px;
+  background-color: #fff;
+  margin: 30px 0 0 30px;
+  border-radius: 30px;
+  position: relative;
+  transition: 1s;
+}
+.portfolio .inner .colorChange.on {
+  background-color: #000;
+}
+.portfolio .inner .colorChange .ball {
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  width: 45px;
+  height: 45px;
+  background-color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s;
+}
+.portfolio .inner .colorChange .ball.on {
+  position: absolute;
+  top: 2.5px;
+  left: 100px;
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .portfolio .inner #searchBox {
   width: 100%;
@@ -1278,6 +1422,30 @@ fieldset {
 .portfolio .inner #gallery .item > div .profile span {
   font: 11px/1 "arial";
   color: #999;
+}
+.portfolio.white {
+  background-color: #fff;
+}
+.portfolio.white .inner h1 {
+  color: #000;
+}
+.portfolio.white .inner #searchBox #search {
+  color: #000;
+}
+.portfolio.white .inner #gallery {
+  font-size: 0;
+}
+.portfolio.white .inner #gallery .item {
+  padding: 5px;
+}
+.portfolio.white .inner #gallery .item > div {
+  width: 100%;
+  background-color: #fff;
+  padding: 15px;
+  position: relative;
+  font-size: 0;
+  background-color: #eee;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
 }
 
 .gallery_aside {
@@ -1871,6 +2039,7 @@ fieldset {
   margin-top: 150px;
 }
 #brand > .inner .wrap2 article {
+  display: flex;
   width: 380px;
   position: relative;
   float: left;
@@ -1879,29 +2048,41 @@ fieldset {
 #brand > .inner .wrap2 article:last-child {
   margin-right: 0;
 }
-#brand > .inner .wrap2 article .circle {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  border: 5px solid #bbb;
+#brand > .inner .wrap2 article .circle_box {
+  position: relative;
+  display: inline-block;
+}
+#brand > .inner .wrap2 article .circle_box .circle_svg {
   border-radius: 50%;
-  border-right: 5px solid #fff;
-  text-align: center;
+  background-color: transparent;
+  transform: rotate(-90deg);
+}
+#brand > .inner .wrap2 article .circle_box .circle_svg circle {
+  fill: transparent;
+  stroke: #666;
+  stroke-width: 15px;
+  stroke-dasharray: 471;
+  stroke-dashoffset: 471;
+}
+#brand > .inner .wrap2 article .circle_box span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font: 42px/140px "arial";
 }
-#brand > .inner .wrap2 article h3 {
-  margin-left: 160px;
+#brand > .inner .wrap2 article .con {
+  margin-left: 20px;
+}
+#brand > .inner .wrap2 article .con h3 {
   font: bold 30px/1 "Roboto", sans-serif;
 }
-#brand > .inner .wrap2 article p {
-  margin-left: 160px;
-}
-#brand > .inner .wrap2 article p:nth-of-type(1) {
+#brand > .inner .wrap2 article .con p:nth-of-type(1) {
   font: 12px/1 "arial";
   color: #aaa;
   margin-top: 5px;
 }
-#brand > .inner .wrap2 article p:nth-of-type(2) {
+#brand > .inner .wrap2 article .con p:nth-of-type(2) {
   margin-top: 20px;
   font: 16px/1.2 "Roboto", sans-serif;
 }
@@ -2236,7 +2417,8 @@ fieldset {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #ffc400;
+  background-color: #333;
+  border: 1px solid #eee;
   margin-bottom: 20px;
   cursor: pointer;
   transition: 0.5s;
@@ -2244,7 +2426,7 @@ fieldset {
 .scroll_nav li.on {
   height: 50px;
   border-radius: 5px;
-  background-color: #ffc400;
+  background-color: #000;
   filter: contrast(140%);
 }
 
@@ -2313,6 +2495,59 @@ fieldset {
   color: #fff;
 }
 
+#popup {
+  width: 100%;
+  height: 20%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  animation: createPopup 1s linear;
+}
+#popup h2 {
+  margin-bottom: 20px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  letter-spacing: 1px;
+  font-size: 28px;
+}
+#popup p {
+  margin-bottom: 25px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  letter-spacing: 1px;
+  color: #aaa;
+  text-align: center;
+}
+#popup .btns a {
+  font-family: "Alegreya Sans SC", sans-serif;
+  margin-right: 50px;
+  color: #fff;
+  padding: 10px;
+  transition: 0.5s;
+}
+#popup .btns a:hover {
+  color: orangered;
+}
+#popup .pop-close {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  transition: 0.5s;
+}
+#popup .pop-close:hover .fa-window-close {
+  color: orangered;
+}
+#popup .pop-close .fa-window-close {
+  font-size: 32px;
+  color: #fff;
+  transition: 0.5s;
+}
+
 /* keyframes---------------------------------------------------------------*/
 @keyframes cdRotate {
   0% {
@@ -2333,6 +2568,14 @@ fieldset {
   100% {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+@keyframes createPopup {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 /*tablet-----------------------------------------------------------------------*/
@@ -2656,6 +2899,10 @@ fieldset {
   #footer {
     padding: 50px 30px;
     height: auto;
+  }
+
+  #popup .pop-close .fa-window-close {
+    font-size: 24px;
   }
 }
 

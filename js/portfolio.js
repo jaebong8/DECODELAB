@@ -6,6 +6,7 @@
 // const rest =
 //   "https://www.flickr.com/services/rest/?method=flickr.test.echo&name=value";
 const body = document.querySelector("body");
+const portfolioFrame = document.querySelector(".portfolio");
 const gallery = document.querySelector("#gallery");
 const input = document.querySelector("#search");
 const btnSearch = document.querySelector(".btnSearch");
@@ -17,8 +18,15 @@ const key = "28e7d1179792950a30beae3c69e7d9dd";
 const secret = "d8ebfc267e56a4ec";
 const per_page = 50;
 const url = `${base}method=${method_interest}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1`;
+const colorChange = document.querySelector(".colorChange");
+const ball = colorChange.querySelector(".ball");
 
 callData(url);
+ball.addEventListener("click", (e) => {
+  portfolioFrame.classList.toggle("white");
+  ball.classList.toggle("on");
+  colorChange.classList.toggle("on");
+});
 
 btnSearch.addEventListener("click", () => {
   getTags();
