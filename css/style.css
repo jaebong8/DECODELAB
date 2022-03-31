@@ -2392,6 +2392,18 @@ fieldset {
 #brand > .inner .wrap2 article:last-child {
   margin-right: 0;
 }
+#brand > .inner .wrap2 article:nth-of-type(1) .circle_box.active .circle_svg circle {
+  animation: circle1 2s linear;
+  animation-fill-mode: forwards;
+}
+#brand > .inner .wrap2 article:nth-of-type(2) .circle_box.active .circle_svg circle {
+  animation: circle2 2s linear;
+  animation-fill-mode: forwards;
+}
+#brand > .inner .wrap2 article:nth-of-type(3) .circle_box.active .circle_svg circle {
+  animation: circle3 2s linear;
+  animation-fill-mode: forwards;
+}
 #brand > .inner .wrap2 article .circle_box {
   position: relative;
   display: inline-block;
@@ -2406,7 +2418,7 @@ fieldset {
   stroke: #666;
   stroke-width: 15px;
   stroke-dasharray: 471;
-  stroke-dashoffset: 471;
+  stroke-dashoffset: -471;
 }
 #brand > .inner .wrap2 article .circle_box span {
   position: absolute;
@@ -2922,6 +2934,21 @@ fieldset {
     transform: translateY(0);
   }
 }
+@keyframes circle1 {
+  100% {
+    stroke-dashoffset: -44;
+  }
+}
+@keyframes circle2 {
+  100% {
+    stroke-dashoffset: -76;
+  }
+}
+@keyframes circle3 {
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
 /*tablet-----------------------------------------------------------------------*/
 @media screen and (max-width: 1179px) {
   /*header-----------------------------------------------------------------------*/
@@ -3014,8 +3041,13 @@ fieldset {
     width: 7vw;
     height: 30vw;
   }
+  #brand > .inner .wrap2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   #brand > .inner .wrap2 article {
-    margin-right: 20px;
+    margin: 0;
     margin-top: 50px;
   }
 
@@ -3153,8 +3185,16 @@ fieldset {
     float: none;
     margin: 0 auto;
   }
+  #brand > .inner .wrap2 {
+    margin-top: 100px;
+  }
   #brand > .inner .wrap2 article {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    margin-top: 50px;
   }
   #brand > .inner .wrap2 article .circle {
     position: static;

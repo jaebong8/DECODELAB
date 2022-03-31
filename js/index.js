@@ -39,6 +39,7 @@ const swiper = new Swiper(".mySwiper", {
 const pie1 = document.querySelector(".pie1");
 const pie2 = document.querySelector(".pie2");
 const pie3 = document.querySelector(".pie3");
+const circleBoxs = document.querySelectorAll(".circle_box");
 
 //쿠키 팝업
 const popup = document.querySelector("#popup");
@@ -70,24 +71,37 @@ weekBtn.addEventListener("click", (e) => {
 });
 
 window.addEventListener("scroll", () => {
-  let bodyHeight = body.scrollHeight;
-  let scroll = window.scrollY || window.pageYOffset;
-  let percent = parseInt((scroll / (bodyHeight - window.innerHeight)) * 100);
-
-  // 전체 화면 20%~ 34% 구간에서 이벤트 발생
-  if (percent >= 20 && percent <= 34) {
-    let cScroll1 = percent - 20;
-    let cScroll2 = percent - 20;
-    let cScroll3 = percent - 20;
-    cScroll1 = cScroll1 * 31;
-    cScroll2 = cScroll2 * 29;
-    cScroll3 = cScroll3 * 27;
-
-    pie1.style.strokeDashoffset = 471 + cScroll1;
-    pie2.style.strokeDashoffset = 471 + cScroll2;
-    pie3.style.strokeDashoffset = 471 + cScroll3;
+  if (brand.classList.contains("on")) {
+    circleBoxs.forEach((box) => {
+      if (box.classList.contains("active")) return;
+      box.classList.add("active");
+    });
+  } else {
+    circleBoxs.forEach((box) => {
+      box.classList.remove("active");
+    });
   }
 });
+
+// window.addEventListener("scroll", () => {
+//   let bodyHeight = body.scrollHeight;
+//   let scroll = window.scrollY || window.pageYOffset;
+//   let percent = parseInt((scroll / (bodyHeight - window.innerHeight)) * 100);
+
+//   // 전체 화면 20%~ 34% 구간에서 이벤트 발생
+//   if (percent >= 20 && percent <= 34) {
+//     let cScroll1 = percent - 20;
+//     let cScroll2 = percent - 20;
+//     let cScroll3 = percent - 20;
+//     cScroll1 = cScroll1 * 31;
+//     cScroll2 = cScroll2 * 29;
+//     cScroll3 = cScroll3 * 27;
+
+//     pie1.style.strokeDashoffset = 471 + cScroll1;
+//     pie2.style.strokeDashoffset = 471 + cScroll2;
+//     pie3.style.strokeDashoffset = 471 + cScroll3;
+//   }
+// });
 
 //btnCall을 클릭했을 때
 btnCall.onclick = function (e) {
@@ -192,10 +206,12 @@ function activation() {
       scroll_lis.forEach((el) => {
         el.classList.remove("on");
       });
+
       scroll_lis[index].classList.add("on");
       for (let section of scrollSections) {
         section.classList.remove("on");
       }
+
       scrollSections[index].classList.add("on");
     }
   });

@@ -458,6 +458,42 @@ $mobile: 539px;
         &:last-child {
           margin-right: 0;
         }
+        &:nth-of-type(1) {
+          .circle_box {
+            &.active {
+              .circle_svg {
+                circle {
+                  animation: circle1 2s linear;
+                  animation-fill-mode: forwards;
+                }
+              }
+            }
+          }
+        }
+        &:nth-of-type(2) {
+          .circle_box {
+            &.active {
+              .circle_svg {
+                circle {
+                  animation: circle2 2s linear;
+                  animation-fill-mode: forwards;
+                }
+              }
+            }
+          }
+        }
+        &:nth-of-type(3) {
+          .circle_box {
+            &.active {
+              .circle_svg {
+                circle {
+                  animation: circle3 2s linear;
+                  animation-fill-mode: forwards;
+                }
+              }
+            }
+          }
+        }
         .circle_box {
           position: relative;
           display: inline-block;
@@ -471,7 +507,7 @@ $mobile: 539px;
               stroke: #666;
               stroke-width: 15px;
               stroke-dasharray: 471;
-              stroke-dashoffset: 471;
+              stroke-dashoffset: -471;
             }
           }
           span {
@@ -1037,6 +1073,21 @@ $mobile: 539px;
     transform: translateY(0);
   }
 }
+@keyframes circle1 {
+  100% {
+    stroke-dashoffset: -44;
+  }
+}
+@keyframes circle2 {
+  100% {
+    stroke-dashoffset: -76;
+  }
+}
+@keyframes circle3 {
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
 
 /*tablet-----------------------------------------------------------------------*/
 @media screen and (max-width: $tablet) {
@@ -1142,8 +1193,11 @@ $mobile: 539px;
       }
 
       .wrap2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         article {
-          margin-right: 20px;
+          margin: 0;
           margin-top: 50px;
         }
       }
@@ -1319,8 +1373,14 @@ $mobile: 539px;
       }
 
       .wrap2 {
+        margin-top: 100px;
         article {
           width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin: 0;
+          margin-top: 50px;
 
           .circle {
             position: static;
