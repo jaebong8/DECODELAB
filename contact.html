@@ -10,7 +10,12 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=17f2ef76ce03c5752741a248b065c8ca"
+    ></script>
     <script src="js/main.js" defer></script>
+    <script src="js/contact.js" defer></script>
   </head>
   <body>
     <header id="header_sub">
@@ -62,14 +67,98 @@
     </header>
     <section class="content contact">
       <div class="sub_visual">
-        <div class="text">
-          <span>The Subvisual Title</span>
-          <p>CONTACT</p>
+        <div class="sub_inner">
+          <div class="text">
+            <span>The Subvisual Title</span>
+            <p>CONTACT</p>
+          </div>
         </div>
       </div>
       <div class="inner">
         <h1>Contact <span>오시는 길</span></h1>
         <!-- 컨텐츠가 들어갈 부분 -->
+        <div id="map">
+          <ul class="traffic">
+            <li>교통정보</li>
+            <li class="on"><a href="#">OFF</a></li>
+            <li><a href="#">ON</a></li>
+          </ul>
+        </div>
+        <ul class="branch">
+          <li class="on" data-index="0"><a href="#">Head Office</a></li>
+          <li data-index="1"><a href="#">Magok Office</a></li>
+          <li data-index="2"><a href="#">Pangyo Office</a></li>
+          <li data-index="3"><a href="#">Jeju Office</a></li>
+        </ul>
+        <div class="contact_us">
+          <div class="bg">
+            <h2>Contact us</h2>
+          </div>
+          <div class="con">
+            <div class="address">
+              <h3>COMPANY ADDRESS</h3>
+              <p>
+                22 East 41/B Street, New York<br />
+                Los Angeles CA 9130A, USA<br />
+                building 47 office 2052
+              </p>
+            </div>
+            <div class="phone">
+              <h3>BOSE CONTACTS</h3>
+              <p>
+                bose1234@bose.com <br />
+                +22 5486 1547 1435
+              </p>
+            </div>
+            <div class="fonts">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fab fa-youtube"></i></a>
+            </div>
+            <div class="follow">
+              <a href="#"
+                ><i class="fas fa-long-arrow-alt-right"></i>follow us</a
+              >
+            </div>
+          </div>
+          <form class="send_box">
+            <fieldset>
+              <legend>FEEDBACK FORM</legend>
+              <label for="contactName"
+                >Name<input type="text" name="contactName" id="contactName" />
+              </label>
+              <label for="contactEmail"
+                >Email<input
+                  type="text"
+                  name="contactEmail"
+                  id="contactEmail"
+                />
+              </label>
+              <label for="contactPhone"
+                >Phone<input
+                  type="text"
+                  name="contactPhone"
+                  id="contactPhone"
+                />
+              </label>
+              <label for="contactMessage"
+                >Message<input
+                  type="text"
+                  name="contactMessage"
+                  id="contactMessage"
+                />
+              </label>
+              <div class="btns">
+                <a href="#">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  Upload File
+                </a>
+                <a href="#"> SEND MESSAGE <i class="far fa-paper-plane"></i></a>
+              </div>
+            </fieldset>
+          </form>
+        </div>
       </div>
     </section>
 

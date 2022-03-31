@@ -227,21 +227,28 @@
       filter: brightness(40%);
       background-attachment: fixed;
     }
-    .text {
-      position: absolute;
-      bottom: -11%;
-      right: 3%;
-      z-index: 2;
-      p {
-        font: 13vmin/1.1 $sora;
+    .sub_inner {
+      width: 1180px;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
 
-        color: #fff;
-      }
-      span {
-        display: block;
-        font: 18px/1 $Alegreya;
-        color: #ddd;
-        margin-left: 5%;
+      .text {
+        position: absolute;
+        bottom: -11%;
+        right: 0;
+        z-index: 5;
+        p {
+          font: 13vmin/1.1 $sora;
+
+          color: #fff;
+        }
+        span {
+          display: block;
+          font: 18px/1 $Alegreya;
+          color: #ddd;
+          margin-left: 5%;
+        }
       }
     }
   }
@@ -359,6 +366,9 @@
     .sub_visual {
       height: 200px;
       margin-bottom: 80px;
+      .sub_inner {
+        width: 100%;
+      }
     }
     .inner {
       width: 100%;

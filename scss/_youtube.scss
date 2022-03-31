@@ -1,6 +1,7 @@
 .youtube {
   background-color: #000;
   padding: 0;
+  transition: 0.5s;
 
   .sub_visual {
     margin-bottom: 0;
@@ -88,6 +89,7 @@
           color: #ddd;
           text-align: center;
           margin: 0 auto;
+          margin-top: 10px;
         }
         span {
           position: absolute;
@@ -203,6 +205,7 @@
             color: #000;
             text-align: center;
             margin: 0 auto;
+            margin-top: 10px;
           }
           span {
             position: absolute;
@@ -246,6 +249,20 @@
             bottom: 1%;
             right: 5%;
             top: auto;
+          }
+        }
+      }
+    }
+    &.white {
+      .main {
+        article {
+          .con {
+            span {
+              position: absolute;
+              bottom: 1%;
+              right: 5%;
+              top: auto;
+            }
           }
         }
       }

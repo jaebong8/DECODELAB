@@ -26,6 +26,11 @@ ball.addEventListener("click", (e) => {
   portfolioFrame.classList.toggle("white");
   ball.classList.toggle("on");
   colorChange.classList.toggle("on");
+  if (portfolioFrame.classList.contains("white")) {
+    loading.setAttribute("src", "img/loading2.gif");
+  } else {
+    loading.setAttribute("src", "img/loading.gif");
+  }
 });
 
 btnSearch.addEventListener("click", () => {

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&family=Roboto:wght@100;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -235,17 +236,23 @@ fieldset {
   filter: brightness(40%);
   background-attachment: fixed;
 }
-.content .sub_visual .text {
+.content .sub_visual .sub_inner {
+  width: 1180px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.content .sub_visual .sub_inner .text {
   position: absolute;
   bottom: -11%;
-  right: 3%;
-  z-index: 2;
+  right: 0;
+  z-index: 5;
 }
-.content .sub_visual .text p {
+.content .sub_visual .sub_inner .text p {
   font: 13vmin/1.1 "Sora", sans-serif;
   color: #fff;
 }
-.content .sub_visual .text span {
+.content .sub_visual .sub_inner .text span {
   display: block;
   font: 18px/1 "Alegreya Sans SC", sans-serif;
   color: #ddd;
@@ -355,6 +362,9 @@ fieldset {
   .content .sub_visual {
     height: 200px;
     margin-bottom: 80px;
+  }
+  .content .sub_visual .sub_inner {
+    width: 100%;
   }
   .content .inner {
     width: 100%;
@@ -939,8 +949,9 @@ fieldset {
 }
 .about .members .wrap article p {
   padding: 20px;
-  text-align: left;
-  font: 12px/1.4 "Roboto", sans-serif;
+  text-align: center;
+  font: 12px/1.4 "Sora", sans-serif;
+  letter-spacing: 1px;
 }
 .about .members .wrap article .fonts {
   width: 100%;
@@ -958,6 +969,7 @@ fieldset {
   background-color: #fff;
 }
 .about .members .wrap article .fonts a i {
+  font-size: 12px;
   line-height: 25px;
   color: #333;
 }
@@ -1003,6 +1015,7 @@ fieldset {
 .youtube {
   background-color: #000;
   padding: 0;
+  transition: 0.5s;
 }
 .youtube .sub_visual {
   margin-bottom: 0;
@@ -1091,6 +1104,7 @@ fieldset {
   color: #ddd;
   text-align: center;
   margin: 0 auto;
+  margin-top: 10px;
 }
 .youtube .main article .con span {
   position: absolute;
@@ -1202,6 +1216,7 @@ fieldset {
   color: #000;
   text-align: center;
   margin: 0 auto;
+  margin-top: 10px;
 }
 .youtube.white .main article .con span {
   position: absolute;
@@ -1230,6 +1245,12 @@ fieldset {
 @keyframes scaleUp {}
 @media screen and (max-width: 1179px) {
   .youtube .main article .con span {
+    position: absolute;
+    bottom: 1%;
+    right: 5%;
+    top: auto;
+  }
+  .youtube.white .main article .con span {
     position: absolute;
     bottom: 1%;
     right: 5%;
@@ -1265,6 +1286,7 @@ fieldset {
   }
 }
 .portfolio {
+  transition: 0.5s;
   background-color: #000;
 }
 .portfolio .sub_visual::after {
@@ -1331,7 +1353,6 @@ fieldset {
   background-color: transparent;
   color: #fff;
   font-family: "Noto Sans KR", sans-serif;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
 }
 .portfolio .inner #searchBox #search:focus {
   outline: none;
@@ -1346,7 +1367,6 @@ fieldset {
   border: none;
   cursor: pointer;
   vertical-align: top;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
 }
 .portfolio .inner #searchBox .btnSearch:hover {
   background-color: #222;
@@ -1357,7 +1377,6 @@ fieldset {
   opacity: 0;
   transform: translateY(100px);
   transition: 1s;
-  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.4);
 }
 .portfolio .inner #gallery.on {
   opacity: 1;
@@ -1371,11 +1390,12 @@ fieldset {
 .portfolio .inner #gallery .item {
   width: 25%;
   float: left;
+  padding: 5px;
 }
 .portfolio .inner #gallery .item > div {
   width: 100%;
-  background-color: #000;
-  padding: 5px;
+  background-color: #111;
+  padding: 10px;
   position: relative;
 }
 .portfolio .inner #gallery .item > div:hover .pic img {
@@ -1395,7 +1415,7 @@ fieldset {
   width: 100%;
   filter: brightness(70%);
   transition: 0.8s;
-  object-fit: fill;
+  object-fit: cover;
 }
 .portfolio .inner #gallery .item > div p {
   color: #777;
@@ -1440,12 +1460,10 @@ fieldset {
 }
 .portfolio.white .inner #gallery .item > div {
   width: 100%;
-  background-color: #fff;
-  padding: 15px;
+  background-color: #eee;
+  padding: 10px;
   position: relative;
   font-size: 0;
-  background-color: #eee;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
 }
 
 .gallery_aside {
@@ -1633,6 +1651,332 @@ fieldset {
   }
   .gallery_aside .popImg .profile span {
     width: 50px;
+  }
+}
+.contact {
+  padding-bottom: 200px;
+}
+.contact .sub_visual::after {
+  background: url("../img/contact.jpg") no-repeat center/cover;
+  background-attachment: fixed;
+}
+.contact .inner #map {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.contact .inner #map .traffic {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 10;
+  display: flex;
+  background-color: #fff;
+  padding: 2px;
+}
+.contact .inner #map .traffic li {
+  background-color: #fff;
+  border-radius: 5px;
+}
+.contact .inner #map .traffic li a {
+  display: inline-block;
+  font: normal 12px/1 "Noto Sans KR", sans-serif;
+  color: #000;
+  padding: 10px;
+}
+.contact .inner #map .traffic li.on {
+  background-color: #555;
+}
+.contact .inner #map .traffic li.on a {
+  color: #fff;
+}
+.contact .inner #map .traffic li:nth-of-type(1) {
+  background-color: #000;
+  color: #fff;
+  font: normal 12px/1 "Noto Sans KR", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.contact .inner .branch {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.contact .inner .branch li {
+  width: 24%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+.contact .inner .branch li a {
+  width: 100%;
+  display: inline-block;
+  padding: 20px 10px;
+  transition: 0.5s;
+  color: #000;
+  font: bold 14px/1 "Sora", sans-serif;
+  background-color: #fff;
+}
+.contact .inner .branch li.on:nth-of-type(1) a {
+  background-color: #4d4d4d;
+  color: #fff;
+}
+.contact .inner .branch li.on:nth-of-type(2) a {
+  background-color: #343c34;
+  color: #fff;
+}
+.contact .inner .branch li.on:nth-of-type(3) a {
+  background-color: #39242a;
+  color: #fff;
+}
+.contact .inner .branch li.on:nth-of-type(4) a {
+  background-color: #22272e;
+  color: #fff;
+}
+.contact .inner .branch li:hover:nth-of-type(1) a {
+  background-color: #4d4d4d;
+  color: #fff;
+}
+.contact .inner .branch li:hover:nth-of-type(2) a {
+  background-color: #343c34;
+  color: #fff;
+}
+.contact .inner .branch li:hover:nth-of-type(3) a {
+  background-color: #39242a;
+  color: #fff;
+}
+.contact .inner .branch li:hover:nth-of-type(4) a {
+  background-color: #22272e;
+  color: #fff;
+}
+.contact .inner .contact_us {
+  margin-top: 200px;
+  width: 100%;
+  height: 700px;
+  background-color: #111;
+  padding-top: 50px;
+  position: relative;
+}
+.contact .inner .contact_us .bg {
+  width: 100%;
+  height: 60%;
+  position: relative;
+}
+.contact .inner .contact_us .bg h2 {
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  color: #fff;
+  z-index: 1;
+  font: bold 32px/1 "Sora", sans-serif;
+}
+.contact .inner .contact_us .bg::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/contactUs.jpg) no-repeat center/cover;
+  filter: brightness(50%);
+}
+.contact .inner .contact_us .con {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 0 50px 0 100px;
+}
+.contact .inner .contact_us .con > div {
+  width: 25%;
+  color: #aaa;
+  padding-left: 50px;
+}
+.contact .inner .contact_us .con > div h3 {
+  font: 10px/1 "Sora", sans-serif;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+.contact .inner .contact_us .con > div p {
+  font: 12px/1.7 "Sora", sans-serif;
+}
+.contact .inner .contact_us .con > div:nth-of-type(3), .contact .inner .contact_us .con > div:nth-of-type(4) {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.contact .inner .contact_us .con > div:nth-of-type(3) a {
+  width: 20px;
+  height: 20px;
+  background-color: #aaa;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.contact .inner .contact_us .con > div:nth-of-type(3) a i {
+  color: #000;
+  font-size: 12px;
+}
+.contact .inner .contact_us .con > div:nth-of-type(3) a:hover {
+  background-color: #fff;
+}
+.contact .inner .contact_us .con > div:nth-of-type(4) a {
+  color: #aaa;
+}
+.contact .inner .contact_us .con > div:nth-of-type(4) a i {
+  margin-right: 5px;
+}
+.contact .inner .contact_us .con > div:nth-of-type(4) a:hover {
+  color: #fff;
+}
+.contact .inner .contact_us .send_box {
+  width: 350px;
+  height: 70%;
+  background-color: #fff;
+  position: absolute;
+  top: -5%;
+  right: 5%;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.contact .inner .contact_us .send_box fieldset {
+  width: 100%;
+}
+.contact .inner .contact_us .send_box fieldset legend {
+  font: bold 10px/1 "Alegreya Sans SC", sans-serif;
+  letter-spacing: 1px;
+}
+.contact .inner .contact_us .send_box fieldset label {
+  width: 100%;
+  margin-top: 30px;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  font: 12px/1 "Sora", sans-serif;
+}
+.contact .inner .contact_us .send_box fieldset label input {
+  border: none;
+  background-color: transparent;
+  padding-left: 5px;
+  height: 100%;
+  font: 12px/1 "Sora", sans-serif;
+}
+.contact .inner .contact_us .send_box fieldset label input:focus {
+  outline: none;
+}
+.contact .inner .contact_us .send_box fieldset .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.contact .inner .contact_us .send_box fieldset .btns a {
+  transition: 0.5s;
+}
+.contact .inner .contact_us .send_box fieldset .btns a:nth-of-type(1) {
+  font: 12px/1 "Sora", sans-serif;
+  color: #000;
+}
+.contact .inner .contact_us .send_box fieldset .btns a:nth-of-type(1) > i {
+  color: #000;
+}
+.contact .inner .contact_us .send_box fieldset .btns a:nth-of-type(2) {
+  font: 12px/1 "Sora", sans-serif;
+  padding: 10px;
+  background-color: #000;
+  margin-right: -30px;
+  color: #fff;
+}
+.contact .inner .contact_us .send_box fieldset .btns a:nth-of-type(2) > i {
+  margin-left: 10px;
+}
+.contact .inner .contact_us .send_box fieldset .btns a:hover {
+  transform: translateY(-5px);
+}
+
+@media screen and (max-width: 1179px) {
+  .contact .inner .contact_us .bg h2 {
+    bottom: -11%;
+  }
+  .contact .inner .contact_us .con {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 0 50px;
+  }
+  .contact .inner .contact_us .con > div {
+    width: 50%;
+    padding: 0;
+  }
+  .contact .inner .contact_us .con > div h3 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .contact .inner .contact_us .con > div:nth-of-type(3), .contact .inner .contact_us .con > div:nth-of-type(4) {
+    margin-top: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 539px) {
+  .contact .inner .branch li {
+    margin-top: 10px;
+    width: 49%;
+  }
+  .contact .inner .contact_us .bg h2 {
+    bottom: -11%;
+  }
+  .contact .inner .contact_us .con {
+    padding: 30px;
+    background-color: #111;
+  }
+  .contact .inner .contact_us .con > div {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 30px;
+  }
+  .contact .inner .contact_us .con > div h3 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .contact .inner .contact_us .con > div:nth-of-type(3), .contact .inner .contact_us .con > div:nth-of-type(4) {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact .inner .contact_us .send_box {
+    height: 60%;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70vw;
+    padding: 10px;
+  }
+  .contact .inner .contact_us .send_box fieldset .btns a:nth-of-type(1) {
+    font-size: 10px;
+  }
+  .contact .inner .contact_us .send_box fieldset .btns a:nth-of-type(2) {
+    margin-right: 0;
+    font-size: 10px;
+  }
+
+  #footer_sub {
+    margin-top: 100px;
   }
 }
 /*header-----------------------------------------------------------------------*/

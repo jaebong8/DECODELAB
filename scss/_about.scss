@@ -146,8 +146,9 @@
         }
         p {
           padding: 20px;
-          text-align: left;
-          font: 12px/1.4 $headerFont;
+          text-align: center;
+          font: 12px/1.4 $sora;
+          letter-spacing: 1px;
         }
         .fonts {
           width: 100%;
@@ -164,6 +165,7 @@
             border-radius: 50%;
             background-color: #fff;
             i {
+              font-size: 12px;
               line-height: 25px;
               color: #333;
             }
