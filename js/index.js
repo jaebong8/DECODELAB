@@ -41,6 +41,12 @@ const pie2 = document.querySelector(".pie2");
 const pie3 = document.querySelector(".pie3");
 const circleBoxs = document.querySelectorAll(".circle_box");
 
+// % 채우기
+
+const circleSpan1 = document.querySelector(".circle__span1");
+const circleSpan2 = document.querySelector(".circle__span2");
+const circleSpan3 = document.querySelector(".circle__span3");
+
 //쿠키 팝업
 const popup = document.querySelector("#popup");
 const weekBtn = popup.querySelector(".weekLater");
@@ -72,11 +78,18 @@ weekBtn.addEventListener("click", (e) => {
 
 window.addEventListener("scroll", () => {
   if (brand.classList.contains("on")) {
+    // % 채우기
+    counter(circleSpan1, 93, 1500);
+    counter(circleSpan2, 87, 1500);
+    counter(circleSpan3, 83, 1500);
     circleBoxs.forEach((box) => {
       if (box.classList.contains("active")) return;
       box.classList.add("active");
     });
   } else {
+    circleSpan1.innerText = 0;
+    circleSpan2.innerText = 0;
+    circleSpan3.innerText = 0;
     circleBoxs.forEach((box) => {
       box.classList.remove("active");
     });
@@ -252,4 +265,20 @@ function closePopup() {
       popup.remove();
     },
   });
+}
+
+function counter(el, target, time) {
+  let current_num = parseInt(el.innerText);
+  let count_num = target - current_num;
+  let interval = time / count_num;
+
+  let timer = setInterval(() => {
+    if (current_num >= target) {
+      current_num = target;
+      clearInterval(timer);
+      return;
+    }
+    current_num++;
+    el.innerText = current_num + "%";
+  }, interval);
 }
