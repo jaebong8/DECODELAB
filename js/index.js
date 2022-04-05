@@ -54,6 +54,18 @@ const agreeBtn = popup.querySelector(".agree");
 const closeBtn = popup.querySelector(".pop-close");
 const isCookie = document.cookie.indexOf("pop=done");
 
+//skip navi
+const skipNavi = document.querySelectorAll("#skipNavi li a");
+
+skipNavi.forEach((el) => {
+  el.addEventListener("focusin", (e) => {
+    el.classList.add("on");
+  });
+  el.addEventListener("focusout", (e) => {
+    el.classList.remove("on");
+  });
+});
+
 if (isCookie == -1) {
   popup.style.display = "flex";
 } else {
