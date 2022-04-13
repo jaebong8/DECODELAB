@@ -1028,7 +1028,7 @@ fieldset {
   width: 150px;
   height: 50px;
   background-color: #fff;
-  margin: 30px 0 0 30px;
+  margin: 80px 0 0 150px;
   border-radius: 30px;
   position: relative;
 }
@@ -1064,14 +1064,12 @@ fieldset {
 .youtube .main article {
   width: 100%;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
   background-color: #000;
   border-bottom: 1px solid #aaa;
   font-family: "Alegreya Sans SC", sans-serif;
   position: relative;
-  padding: 50px 0;
+  padding: 50px;
   transition: 0.5s;
   animation: drop 1s linear;
 }
@@ -1079,38 +1077,35 @@ fieldset {
   border-top: 1px solid #aaa;
 }
 .youtube .main article .pic {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
+  height: 300px;
+  width: 40%;
+  min-width: 300px;
 }
 .youtube .main article .pic img {
-  width: 30vw;
-  min-width: 300px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .youtube .main article .con {
-  width: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .youtube .main article .con h2 {
-  position: absolute;
-  top: 5%;
-  left: 5%;
   color: #fff;
   text-align: center;
-  font-size: 30px;
+  font-size: 2vw;
+  font-family: "Sora", sans-serif;
 }
 .youtube .main article .con p {
-  width: 50%;
-  color: #ddd;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 10px;
+  color: #aaa;
+  text-align: left;
+  font-size: 18px;
 }
 .youtube .main article .con span {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  color: #fff;
+  color: #ecc9a8;
   font-size: 16px;
 }
 .youtube .main > span {
@@ -1176,53 +1171,48 @@ fieldset {
 .youtube.white .main article {
   width: 100%;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
   background-color: #fff;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #aaa;
   font-family: "Alegreya Sans SC", sans-serif;
   position: relative;
-  padding: 50px 0;
+  padding: 50px;
   transition: 0.5s;
   animation: drop 1s linear;
 }
 .youtube.white .main article:first-child {
-  border-top: 1px solid #000;
+  border-top: 1px solid #aaa;
 }
 .youtube.white .main article .pic {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
+  height: 300px;
+  width: 40%;
+  min-width: 300px;
 }
 .youtube.white .main article .pic img {
-  width: 30vw;
-  min-width: 300px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .youtube.white .main article .con {
-  width: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .youtube.white .main article .con h2 {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  color: #000;
+  color: #222;
   text-align: center;
-  font-size: 30px;
+  font-size: 2vw;
+  font-family: "Sora", sans-serif;
 }
 .youtube.white .main article .con p {
-  width: 50%;
-  color: #000;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 10px;
+  color: #6d6d6d;
+  text-align: left;
+  font-size: 18px;
 }
 .youtube.white .main article .con span {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  color: #000;
+  color: #d37c2b;
   font-size: 16px;
 }
 .youtube.white .main > span {
@@ -1244,17 +1234,8 @@ fieldset {
 
 @keyframes scaleUp {}
 @media screen and (max-width: 1179px) {
-  .youtube .main article .con span {
-    position: absolute;
-    bottom: 1%;
-    right: 5%;
-    top: auto;
-  }
-  .youtube.white .main article .con span {
-    position: absolute;
-    bottom: 1%;
-    right: 5%;
-    top: auto;
+  .youtube .main article .con {
+    padding-left: 10px;
   }
 
   .youtube_aside {
@@ -1281,8 +1262,35 @@ fieldset {
   }
 }
 @media screen and (max-width: 539px) {
+  .youtube .colorChange {
+    margin: 10px;
+    margin-top: 30px;
+    transition: 0.5s;
+  }
+
+  .youtube .main article {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .youtube .main article .pic {
-    margin-top: 100px;
+    width: 100%;
+  }
+  .youtube .main article .con {
+    width: 100%;
+  }
+  .youtube .main article .con p {
+    margin: 20px 0;
+  }
+
+  .youtube.white .main article .pic {
+    width: 100%;
+  }
+  .youtube.white .main article .con {
+    width: 100%;
+  }
+  .youtube.white .main article .con h2 {
+    margin-top: 20px;
   }
 }
 .portfolio {
@@ -1311,7 +1319,7 @@ fieldset {
   width: 150px;
   height: 50px;
   background-color: #fff;
-  margin: 30px 0 0 30px;
+  margin-top: 30px;
   border-radius: 30px;
   position: relative;
   transition: 1s;
@@ -1342,7 +1350,7 @@ fieldset {
 }
 .portfolio .inner #searchBox {
   width: 100%;
-  padding: 50px;
+  margin: 50px 0;
   font-size: 0;
 }
 .portfolio .inner #searchBox #search {
@@ -1397,6 +1405,7 @@ fieldset {
   background-color: #111;
   padding: 10px;
   position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 .portfolio .inner #gallery .item > div:hover .pic img {
   filter: brightness(90%);
@@ -1410,6 +1419,7 @@ fieldset {
   display: block;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 .portfolio .inner #gallery .item > div .pic img {
   width: 100%;
@@ -1418,17 +1428,11 @@ fieldset {
   object-fit: cover;
 }
 .portfolio .inner #gallery .item > div p {
-  color: #777;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font: bold 12px/1 "Sora", sans-serif;
+  font: bold 16px/1 "Sora", sans-serif;
   color: #fff;
-  opacity: 0;
   transition: 1s;
+  padding: 20px 0;
+  border-top: 1px solid #aaa;
 }
 .portfolio .inner #gallery .item > div .profile {
   display: flex;
@@ -1460,10 +1464,18 @@ fieldset {
 }
 .portfolio.white .inner #gallery .item > div {
   width: 100%;
-  background-color: #eee;
+  background-color: #fff;
   padding: 10px;
   position: relative;
   font-size: 0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.portfolio.white .inner #gallery .item > div .pic {
+  margin-bottom: 20px;
+}
+.portfolio.white .inner #gallery .item > div p {
+  border-top: 1px solid #aaa;
+  color: #222;
 }
 
 .gallery_aside {
@@ -1664,6 +1676,9 @@ fieldset {
   width: 100%;
   height: 500px;
   position: relative;
+}
+.contact .inner #map div > div > div:nth-of-type(2) {
+  filter: grayscale(1);
 }
 .contact .inner #map .traffic {
   position: absolute;

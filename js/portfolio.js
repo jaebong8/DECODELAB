@@ -173,6 +173,6 @@ function removeAside(e) {
     setTimeout(() => {
       aside.remove();
       body.style.overflow = "auto";
-    }, 2000);
+    }, 700);
   }
 }

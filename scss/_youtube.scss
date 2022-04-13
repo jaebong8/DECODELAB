@@ -14,7 +14,7 @@
     width: 150px;
     height: 50px;
     background-color: #fff;
-    margin: 30px 0 0 30px;
+    margin: 80px 0 0 150px;
     border-radius: 30px;
     position: relative;
     &.on {
@@ -51,51 +51,46 @@
     article {
       width: 100%;
       display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
+      justify-content: space-evenly;
       background-color: #000;
       border-bottom: 1px solid #aaa;
       font-family: $Alegreya;
       position: relative;
-      padding: 50px 0;
+      padding: 50px;
       transition: 0.5s;
       animation: drop 1s linear;
       &:first-child {
         border-top: 1px solid #aaa;
       }
       .pic {
-        display: flex;
-        justify-content: center;
-        margin-top: 50px;
+        height: 300px;
+        width: 40%;
+        min-width: 300px;
         img {
-          width: 30vw;
-          min-width: 300px;
+          width: 100%;
+          height: 100%;
           object-fit: cover;
         }
       }
       .con {
-        width: 100%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         h2 {
-          position: absolute;
-          top: 5%;
-          left: 5%;
           color: #fff;
           text-align: center;
-          font-size: 30px;
+          font-size: 2vw;
+          font-family: $sora;
         }
         p {
-          width: 50%;
-          color: #ddd;
-          text-align: center;
-          margin: 0 auto;
-          margin-top: 10px;
+          color: #aaa;
+          text-align: left;
+          font-size: 18px;
         }
         span {
-          position: absolute;
-          top: 5%;
-          right: 5%;
-          color: #fff;
+          color: rgb(236, 201, 168);
           font-size: 16px;
         }
       }
@@ -167,55 +162,51 @@
       article {
         width: 100%;
         display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        justify-content: space-evenly;
         background-color: #fff;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid #aaa;
         font-family: $Alegreya;
         position: relative;
-        padding: 50px 0;
+        padding: 50px;
         transition: 0.5s;
         animation: drop 1s linear;
         &:first-child {
-          border-top: 1px solid #000;
+          border-top: 1px solid #aaa;
         }
         .pic {
-          display: flex;
-          justify-content: center;
-          margin-top: 50px;
+          height: 300px;
+          width: 40%;
+          min-width: 300px;
           img {
-            width: 30vw;
-            min-width: 300px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
           }
         }
         .con {
-          width: 100%;
+          width: 40%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
           h2 {
-            position: absolute;
-            top: 5%;
-            left: 5%;
-            color: #000;
+            color: #222;
             text-align: center;
-            font-size: 30px;
+            font-size: 2vw;
+            font-family: $sora;
           }
           p {
-            width: 50%;
-            color: #000;
-            text-align: center;
-            margin: 0 auto;
-            margin-top: 10px;
+            color: rgb(109, 109, 109);
+            text-align: left;
+            font-size: 18px;
           }
           span {
-            position: absolute;
-            top: 5%;
-            right: 5%;
-            color: #000;
+            color: rgb(211, 124, 43);
             font-size: 16px;
           }
         }
       }
+
       > span {
         display: inline-block;
         color: #fff;
@@ -244,26 +235,7 @@
     .main {
       article {
         .con {
-          span {
-            position: absolute;
-            bottom: 1%;
-            right: 5%;
-            top: auto;
-          }
-        }
-      }
-    }
-    &.white {
-      .main {
-        article {
-          .con {
-            span {
-              position: absolute;
-              bottom: 1%;
-              right: 5%;
-              top: auto;
-            }
-          }
+          padding-left: 10px;
         }
       }
     }
@@ -294,7 +266,40 @@
 }
 
 @media screen and (max-width: $mobile) {
-  .youtube .main article .pic {
-    margin-top: 100px;
+  .youtube .colorChange {
+    margin: 10px;
+    margin-top: 30px;
+    transition: 0.5s;
+  }
+  .youtube .main article {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .pic {
+      width: 100%;
+    }
+    .con {
+      width: 100%;
+      p {
+        margin: 20px 0;
+      }
+    }
+  }
+  .youtube {
+    &.white {
+      .main {
+        article {
+          .pic {
+            width: 100%;
+          }
+          .con {
+            width: 100%;
+            h2 {
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+    }
   }
 }

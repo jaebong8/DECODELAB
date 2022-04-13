@@ -65,7 +65,7 @@ function crateItem(num) {
                   <h2 data-vid="${item.snippet.resourceId.videoId}">
                       ${tit}
                   </h2>
-                  <p>${desc}<p>
+                  <p>${desc}</p>
                   <span>${date}</span>
               </div>
           </article>

@@ -12,7 +12,9 @@
       width: 100%;
       height: 500px;
       position: relative;
-
+      div > div > div:nth-of-type(2) {
+        filter: grayscale(1);
+      }
       .traffic {
         position: absolute;
         top: 5px;
