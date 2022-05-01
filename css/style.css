@@ -1677,6 +1677,9 @@ fieldset {
   height: 500px;
   position: relative;
 }
+.contact .inner #map div > div > div:nth-of-type(1) {
+  filter: grayscale(1);
+}
 .contact .inner #map div > div > div:nth-of-type(2) {
   filter: grayscale(1);
 }
